@@ -1,0 +1,46 @@
+name: 验证 SQL 案例
+on:
+  push:
+    branches: [main, master]
+    paths: ['sql/**', 'scripts/**']
+  pull_request:
+    paths: ['sql/**', 'scripts/**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mysql-version: ['5.7', '8.0']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 启动 MySQL ${{ matrix.mysql-version }}
+        run: |
+          if [[ "${{ matrix.mysql-version }}" == "5.7" ]]; then
+            docker compose up -d mysql57
+            PORT=3307
+          else
+            docker compose up -d mysql80
+            PORT=3308
+          fi
+          # 等待就绪
+          for i in $(seq 1 60); do
+            docker exec sql-treasure-mysql$(echo ${{ matrix.mysql-version }} | tr -d '.') mysqladmin ping -h localhost -proot &>/dev/null && break
+            sleep 2
+          done
+
+      - name: 验证所有案例的 SQL 语法
+        run: |
+          PORT=$( [[ "${{ matrix.mysql-version }}" == "5.7" ]] && echo 3307 || echo 3308 )
+          FAIL=0
+          for case_dir in sql/cases/*/; do
+            case_name=$(basename "$case_dir")
+            echo "::group::验证案例: $case_name (MySQL ${{ matrix.mysql-version }})"
+            if ! ./scripts/run-case.sh "$case_name" --ver ${{ matrix.mysql-version }}; then
+              echo "::error::案例 $case_name 在 MySQL ${{ matrix.mysql-version }} 上运行失败"
+              FAIL=1
+            fi
+            echo "::endgroup::"
+          done
+          exit $FAIL

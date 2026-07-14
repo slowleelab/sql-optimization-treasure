@@ -1,0 +1,15 @@
+{
+  "name": "sql-optimization-treasure",
+  "version": "1.0.0",
+  "description": "SQL 优化典藏大集 - 一套能跑、能量化对比的 MySQL 优化实战案例集",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.0"
+  },
+  "license": "MIT"
+}
