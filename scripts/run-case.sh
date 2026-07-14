@@ -126,6 +126,7 @@ run_explain() {
   local label="$1"
   local color="$2"
   local file="$3"
+  local setup_file="${4:-}"   # 可选: EXPLAIN 前先执行的 DDL/setup 文件
 
   if [[ ! -f "$file" ]]; then
     echo -e "  ${YELLOW}⚠ 未找到 $label 文件: $(basename "$file")${NC}"
@@ -133,8 +134,13 @@ run_explain() {
   fi
 
   echo -e "${color}━━━ $label ━━━${NC}"
-  echo -e "${color}SQL: $(head -1 "$file")${NC}"
+  echo -e "${color}SQL: $(grep -v '^--' "$file" | head -1)$NC"
   echo ""
+
+  # 如果有 setup 文件（如 DDL 变更），先执行
+  if [[ -n "$setup_file" && -f "$setup_file" ]]; then
+    $MYSQL_CMD < "$setup_file" 2>/dev/null
+  fi
 
   # 使用 \G 垂直格式 + FORMAT=JSON 获取详细执行计划
   # 为了对比清晰，使用表格式输出
@@ -149,8 +155,9 @@ run_explain() {
   echo ""
 }
 
-run_explain "bad.sql (优化前)" "$RED" "$CASE_PATH/bad.sql"
-run_explain "good.sql (优化后)" "$GREEN" "$CASE_PATH/good.sql"
+# bad.sql 可选 setup-bad.sql; good.sql 可选 setup-good.sql
+run_explain "bad.sql (优化前)" "$RED" "$CASE_PATH/bad.sql" "$CASE_PATH/setup-bad.sql"
+run_explain "good.sql (优化后)" "$GREEN" "$CASE_PATH/good.sql" "$CASE_PATH/setup-good.sql"
 
 # ────────────────────────────── 参考结果 ──────────────────────────────
 EXPECTED_DIR="$CASE_PATH/expected"

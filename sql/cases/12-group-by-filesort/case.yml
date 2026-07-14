@@ -1,0 +1,8 @@
+title: GROUP BY filesort 优化
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["GROUP BY", "filesort", "临时表", "索引有序"]
+description: |
+  按非索引列做 GROUP BY 时产生 Using temporary; Using filesort，
+  通过创建合适索引让分组利用索引有序性，消除临时表和文件排序。

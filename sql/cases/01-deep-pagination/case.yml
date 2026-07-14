@@ -1,0 +1,8 @@
+title: 深度分页 LIMIT 大偏移
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["分页", "延迟关联", "覆盖索引", "深分页"]
+description: |
+  电商订单列表翻页到第 10 万页时，接口耗时从 50ms 飙升到数秒。
+  本案例演示 LIMIT 大偏移的性能陷阱，以及延迟关联 + 覆盖索引的优化方案。

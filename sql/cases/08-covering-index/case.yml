@@ -1,0 +1,8 @@
+title: 覆盖索引避免回表
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["覆盖索引", "回表", "Using index"]
+description: |
+  查询只需要索引中已包含的列时，可以通过覆盖索引避免回表，
+  Extra 显示 Using index，大幅减少 I/O。

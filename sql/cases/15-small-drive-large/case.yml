@@ -1,0 +1,9 @@
+title: JOIN 小表驱动大表
+category: join
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["JOIN", "Nested Loop", "驱动表", "被驱动表"]
+description: |
+  JOIN 查询中，MySQL 用驱动表的每行去被驱动表查找匹配行。
+  小表驱动大表可以减少被驱动表的查找次数，显著提升性能。
+  本案例演示索引缺失和驱动表选错时的性能灾难。

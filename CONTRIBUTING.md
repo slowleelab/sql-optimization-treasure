@@ -56,7 +56,7 @@ CREATE TABLE t_order (
     amount      DECIMAL(10,2) NOT NULL,
     status      TINYINT      NOT NULL DEFAULT 0,
     created_at  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (pk_id),
+    PRIMARY KEY (id),
     KEY idx_user_id (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```

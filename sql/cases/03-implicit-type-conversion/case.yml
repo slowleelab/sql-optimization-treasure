@@ -1,0 +1,8 @@
+title: 隐式类型转换致索引失效
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["类型转换", "索引失效", "VARCHAR", "手机号查询"]
+description: |
+  用户表手机号字段建有索引，但查询时传入了数字类型而非字符串，
+  MySQL 隐式类型转换导致索引失效，退化为全表扫描。
