@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: 安装依赖
@@ -33,7 +33,9 @@ jobs:
       - name: 构建 VitePress
         run: npm run docs:build
 
-      - uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
