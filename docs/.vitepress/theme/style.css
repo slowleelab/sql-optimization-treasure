@@ -93,24 +93,98 @@
 }
 
 /* Hero 按钮增强 */
-.VPHero .VPButton {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.VPHero .actions {
+  gap: 16px;
 }
 
+.VPHero .VPButton {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 主按钮 - 渐变背景 + 光泽扫过 */
 .VPHero .VPButton.brand {
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(58, 166, 117, 0.35);
+  background: linear-gradient(135deg, var(--sql-treasure-green-dark), var(--sql-treasure-green));
+  border: none;
+  box-shadow:
+    0 4px 14px rgba(58, 166, 117, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 光泽扫过效果 */
+.VPHero .VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .VPHero .VPButton.brand:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(58, 166, 117, 0.45);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--sql-treasure-green), var(--sql-treasure-green-light));
+  box-shadow:
+    0 8px 24px rgba(58, 166, 117, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.VPHero .VPButton.brand:hover::before {
+  left: 100%;
+}
+
+.VPHero .VPButton.brand:active {
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 8px rgba(58, 166, 117, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* 次按钮 - 边框 + hover 填充 */
+.VPHero .VPButton.alt {
+  font-weight: 600;
+  border: 1.5px solid var(--vp-c-border);
+  background: var(--vp-c-bg);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* hover 时从底部填充渐变 */
+.VPHero .VPButton.alt::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(135deg, var(--sql-treasure-green), var(--sql-treasure-blue));
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
 .VPHero .VPButton.alt:hover {
-  transform: translateY(-2px);
-  border-color: var(--sql-treasure-green);
-  color: var(--sql-treasure-green);
+  transform: translateY(-3px);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(58, 166, 117, 0.25);
+}
+
+.VPHero .VPButton.alt:hover::before {
+  height: 100%;
+}
+
+.VPHero .VPButton.alt:active {
+  transform: translateY(-1px);
 }
 
 /* ─── Features 卡片增强 ─── */
