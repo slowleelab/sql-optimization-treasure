@@ -86,9 +86,12 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
 
+  // GitHub Pages 部署在 /sql-optimization-treasure/ 子路径下
+  base: '/sql-optimization-treasure/',
+
   head: [
     ['meta', { name: 'theme-color', content: '#3aa675' }],
-    ['link', { rel: 'icon', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', href: '/sql-optimization-treasure/favicon.svg' }],
   ],
 
   themeConfig: {
