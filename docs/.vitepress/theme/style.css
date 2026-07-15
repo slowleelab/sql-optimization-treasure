@@ -10,6 +10,27 @@
   --sql-treasure-green-dark: #2d8559;
   --sql-treasure-blue: #3e8ed0;
   --sql-treasure-orange: #f0a020;
+
+  /* 覆盖 VitePress 按钮官方变量（优先级最高，不会被 scoped CSS 覆盖）*/
+  --vp-button-brand-bg: #3aa675;
+  --vp-button-brand-hover-bg: #2d8559;
+  --vp-button-brand-active-bg: #246b48;
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-active-text: #ffffff;
+
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-hover-bg: #3aa675;
+  --vp-button-alt-active-bg: #2d8559;
+  --vp-button-alt-border: #3aa675;
+  --vp-button-alt-hover-border: transparent;
+  --vp-button-alt-active-border: transparent;
+  --vp-button-alt-text: #3aa675;
+  --vp-button-alt-hover-text: #ffffff;
+  --vp-button-alt-active-text: #ffffff;
 }
 
 /* 暗色模式变量 */
@@ -17,6 +38,14 @@
   --sql-treasure-green: #4cc58f;
   --sql-treasure-green-light: #6ae0a8;
   --sql-treasure-green-dark: #3aa675;
+
+  --vp-button-brand-bg: #3aa675;
+  --vp-button-brand-hover-bg: #4cc58f;
+  --vp-button-brand-active-bg: #2d8559;
+
+  --vp-button-alt-border: #4cc58f;
+  --vp-button-alt-text: #4cc58f;
+  --vp-button-alt-hover-bg: #3aa675;
 }
 
 /* ─── Hero 区域增强 ─── */
@@ -103,17 +132,12 @@
   overflow: hidden;
 }
 
-/* 主按钮 - 渐变背景 + 光泽扫过 */
+/* 主按钮 - 光泽扫过效果 */
 .VPHero .VPButton.brand {
   font-weight: 600;
-  background: linear-gradient(135deg, var(--sql-treasure-green-dark), var(--sql-treasure-green));
-  border: none;
-  box-shadow:
-    0 4px 14px rgba(58, 166, 117, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(58, 166, 117, 0.35);
 }
 
-/* 光泽扫过效果 */
 .VPHero .VPButton.brand::before {
   content: '';
   position: absolute;
@@ -128,14 +152,12 @@
     transparent
   );
   transition: left 0.5s ease;
+  z-index: 1;
 }
 
 .VPHero .VPButton.brand:hover {
   transform: translateY(-3px);
-  background: linear-gradient(135deg, var(--sql-treasure-green), var(--sql-treasure-green-light));
-  box-shadow:
-    0 8px 24px rgba(58, 166, 117, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(58, 166, 117, 0.45);
 }
 
 .VPHero .VPButton.brand:hover::before {
@@ -144,22 +166,17 @@
 
 .VPHero .VPButton.brand:active {
   transform: translateY(-1px);
-  box-shadow:
-    0 2px 8px rgba(58, 166, 117, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(58, 166, 117, 0.3);
 }
 
-/* 次按钮 - 边框 + hover 填充 */
+/* 次按钮 - hover 填充动画 */
 .VPHero .VPButton.alt {
   font-weight: 600;
-  border: 1.5px solid var(--vp-c-border);
-  background: var(--vp-c-bg);
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-/* hover 时从底部填充渐变 */
 .VPHero .VPButton.alt::before {
   content: '';
   position: absolute;
@@ -167,16 +184,14 @@
   left: 0;
   right: 0;
   height: 0;
-  background: linear-gradient(135deg, var(--sql-treasure-green), var(--sql-treasure-blue));
+  background: var(--sql-treasure-green);
   transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
 }
 
 .VPHero .VPButton.alt:hover {
   transform: translateY(-3px);
-  border-color: transparent;
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(58, 166, 117, 0.25);
+  box-shadow: 0 8px 24px rgba(58, 166, 117, 0.2);
 }
 
 .VPHero .VPButton.alt:hover::before {
