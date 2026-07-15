@@ -1,0 +1,9 @@
+title: COUNT(*) 慢查询优化
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["COUNT", "汇总表", "物化视图"]
+description: |
+  大表 COUNT(*) 受 WHERE 条件限制无法走覆盖索引时，需扫描大量行，
+  随数据增长越来越慢。通过预计算汇总表（物化视图），将 O(n) 的
+  全表扫描降为 O(1) 的汇总查询。

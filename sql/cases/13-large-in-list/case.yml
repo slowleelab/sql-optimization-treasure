@@ -1,0 +1,9 @@
+title: 大 IN 列表优化
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["IN列表", "临时表", "JOIN"]
+description: |
+  WHERE id IN (1,2,3,...,10000) 当 IN 列表非常大时，优化器解析开销大、
+  执行计划可能不稳定。改用临时表 JOIN，让优化器走标准的 JOIN 路径，
+  执行计划更可控、可复用。

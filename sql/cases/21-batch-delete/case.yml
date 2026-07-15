@@ -1,0 +1,9 @@
+title: 大表 DELETE 分批
+category: ddl
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["大表DELETE", "分批", "大事务", "主从延迟"]
+description: |
+  一次性 DELETE 大量数据会导致大事务、长时间锁表和严重的主从延迟。
+  本案例演示分批 DELETE 的思路：每次只删一小批（如 1000 行），
+  通过循环执行 LIMIT N 避免大事务，减少锁持有时间和 binlog 单条体积。

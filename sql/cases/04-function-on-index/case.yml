@@ -1,0 +1,9 @@
+title: 函数操作致索引失效
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["函数索引", "DATE_FORMAT", "索引失效"]
+description: |
+  订单表 created_at 字段建有索引，但查询时用 DATE(created_at) = '...' 或
+  DATE_FORMAT(created_at, '%Y-%m-%d') = '...' 对索引列套用了函数，
+  导致索引失效退化为全表扫描。改写为范围查询即可恢复索引扫描。

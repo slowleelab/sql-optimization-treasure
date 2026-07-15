@@ -1,0 +1,9 @@
+title: Hash Join vs BNL
+category: join
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["Hash Join", "BNL", "8.0新特性"]
+description: |
+  无索引 JOIN 时，5.7 只能用 Block Nested Loop (BNL) 做笛卡尔积式扫描，
+  复杂度 O(n*m)。8.0 引入 Hash Join，对小表构建哈希表后探测大表，
+  复杂度降为 O(n+m)，但仍不如加索引后的 Index Nested Loop 高效。

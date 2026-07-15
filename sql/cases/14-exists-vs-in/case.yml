@@ -1,0 +1,10 @@
+title: EXISTS vs IN 选择
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["EXISTS", "IN", "子查询"]
+description: |
+  经典原则: 外表大、内表(子查询)小时，IN 让小表驱动大表更高效；
+  外表小、内表大时，EXISTS 相关子查询更高效。
+  MySQL 8.0 优化器通常会把 IN/EXISTS 自动改写为 semi-join 统一处理，
+  理解原理仍有价值——在优化器失效或 5.7 场景下，手写更优形式能救命。

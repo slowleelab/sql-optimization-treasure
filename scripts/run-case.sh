@@ -137,21 +137,41 @@ run_explain() {
   echo -e "${color}SQL: $(grep -v '^--' "$file" | head -1)$NC"
   echo ""
 
-  # 如果有 setup 文件（如 DDL 变更），先执行
+  # 构建 EXPLAIN 命令：如果有 setup 文件，先执行 setup
+  local setup_sql=""
   if [[ -n "$setup_file" && -f "$setup_file" ]]; then
-    $MYSQL_CMD < "$setup_file" 2>/dev/null
+    setup_sql="$(grep -v '^--' "$setup_file" | grep -v '^$') "
   fi
 
-  # 使用 \G 垂直格式 + FORMAT=JSON 获取详细执行计划
-  # 为了对比清晰，使用表格式输出
-  $MYSQL_CMD -e "SET SESSION format='TREE' 2>/dev/null; EXPLAIN $(cat "$file");" 2>/dev/null \
-    || $MYSQL_CMD -e "EXPLAIN $(cat "$file");"
+  # 如果 setup 包含 DDL（ALTER/CREATE/DROP），直接用文件执行（支持多语句）
+  if echo "$setup_sql" | grep -qiE 'ALTER|CREATE|DROP|TRUNCATE'; then
+    # DDL 语句用文件方式执行（支持多条 DDL），忽略已存在等错误
+    $MYSQL_CMD --force < "$setup_file" 2>/dev/null
+    # 再跑 EXPLAIN（DDL 跨连接生效）
+    $MYSQL_CMD -e "EXPLAIN $(cat "$file");" 2>/dev/null \
+      || $MYSQL_CMD -e "EXPLAIN $(cat "$file");"
+  elif echo "$setup_sql" | grep -qiE 'SET SESSION|SET @'; then
+    # SET SESSION 必须和 EXPLAIN 在同一连接
+    local session_only=""
+    session_only="$(echo "$setup_sql" | grep -iE 'SET SESSION|SET @')"
+    $MYSQL_CMD -e "${session_only} EXPLAIN $(cat "$file");" 2>/dev/null \
+      || $MYSQL_CMD -e "EXPLAIN $(cat "$file");"
+  else
+    $MYSQL_CMD -e "EXPLAIN $(cat "$file");" 2>/dev/null \
+      || $MYSQL_CMD -e "EXPLAIN $(cat "$file");"
+  fi
 
   echo ""
 
-  # 跑实际查询统计耗时
+  # 跑实际查询统计耗时（同样需要 setup 的 SET SESSION 在同一连接）
   echo -e "${color}实际执行耗时:${NC}"
-  $MYSQL_CMD -e "SET @start_ts := NOW(6); $(cat "$file"); SET @end_ts := NOW(6); SELECT CONCAT(ROUND(TIMESTAMPDIFF(MICROSECOND, @start_ts, @end_ts)/1000, 2), ' ms') AS elapsed;" 2>/dev/null | sed 's/^/  /'
+  if echo "$setup_sql" | grep -qiE 'SET SESSION|SET @'; then
+    local session_only=""
+    session_only="$(echo "$setup_sql" | grep -iE 'SET SESSION|SET @')"
+    $MYSQL_CMD -e "${session_only} SET @start_ts := NOW(6); $(cat "$file"); SET @end_ts := NOW(6); SELECT CONCAT(ROUND(TIMESTAMPDIFF(MICROSECOND, @start_ts, @end_ts)/1000, 2), ' ms') AS elapsed;" 2>/dev/null | sed 's/^/  /'
+  else
+    $MYSQL_CMD -e "SET @start_ts := NOW(6); $(cat "$file"); SET @end_ts := NOW(6); SELECT CONCAT(ROUND(TIMESTAMPDIFF(MICROSECOND, @start_ts, @end_ts)/1000, 2), ' ms') AS elapsed;" 2>/dev/null | sed 's/^/  /'
+  fi
   echo ""
 }
 

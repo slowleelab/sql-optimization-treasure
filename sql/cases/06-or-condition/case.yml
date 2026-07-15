@@ -1,0 +1,9 @@
+title: OR 条件与索引合并
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["OR", "index_merge", "UNION改写"]
+description: |
+  用户表 phone 和 status 分别有索引，但 WHERE phone='x' OR city='北京' 中
+  city 列无索引。当 OR 连接的多个条件中有一个无法走索引时，整个查询
+  退化为全表扫描。可通过给缺失索引的列建索引 + UNION 改写来优化。

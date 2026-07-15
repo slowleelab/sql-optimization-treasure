@@ -1,0 +1,9 @@
+title: 报表统计汇总表
+category: architecture
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["汇总表", "物化视图", "报表统计"]
+description: |
+  实时报表对大表做 GROUP BY 聚合，数据量大时耗时严重。
+  本案例演示通过汇总表（物化视图）预计算每日统计数据，
+  查询时直接读汇总表，将大表实时聚合降为小表直接查询。

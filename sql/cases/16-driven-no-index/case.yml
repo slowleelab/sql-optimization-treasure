@@ -1,0 +1,9 @@
+title: 被驱动表无索引的灾难
+category: join
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["JOIN", "被驱动表", "无索引", "BNL"]
+description: |
+  JOIN 时被驱动表的 JOIN 列没有索引，5.7 退化为 Block Nested Loop (BNL)
+  全表扫描，8.0 虽有 Hash Join 兜底但效率仍远不如索引。给 JOIN 列加索引后，
+  走 Index Nested Loop Join，性能提升数个数量级。

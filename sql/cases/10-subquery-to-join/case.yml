@@ -1,0 +1,9 @@
+title: 子查询改写为 JOIN
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["子查询", "JOIN改写", "IN"]
+description: |
+  查询"有订单的用户"时，使用 IN 子查询在 5.7 上可能退化为相关子查询
+  或低效执行计划，全表扫描订单表。改写为 INNER JOIN + DISTINCT 后，
+  优化器可用 idx_user_id 索引做高效的 JOIN 操作。

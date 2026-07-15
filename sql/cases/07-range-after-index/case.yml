@@ -1,0 +1,10 @@
+title: 范围查询后列索引失效
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["范围查询", "联合索引", "索引列顺序"]
+description: |
+  联合索引 (user_id, status, amount) 中，WHERE user_id=1 AND status>1 AND amount>500
+  的 status 是范围查询，导致其后的 amount 列无法参与索引过滤。
+  将 status 改为等值条件后，amount 即可走索引。
+  若业务确需对 status 做范围查询，应调整联合索引列顺序，把范围列放最后。

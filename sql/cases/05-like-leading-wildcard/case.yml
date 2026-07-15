@@ -1,0 +1,9 @@
+title: LIKE 前导通配符致索引失效
+category: indexing
+difficulty: 1
+versions: ["5.7", "8.0"]
+tags: ["LIKE", "通配符", "索引失效"]
+description: |
+  用户表 username 建有索引，但 LIKE '%keyword%' 使用了前导通配符，
+  B+ 树无法定位起点，索引失效退化为全表扫描。
+  改为后导通配符 LIKE 'keyword%' 可走索引范围扫描。

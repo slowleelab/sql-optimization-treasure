@@ -1,0 +1,9 @@
+title: 联合索引最左前缀失效
+category: indexing
+difficulty: 1
+versions: ["5.7", "8.0"]
+tags: ["联合索引", "最左前缀", "索引失效"]
+description: |
+  订单表建有联合索引 (user_id, status, created_at)，但查询条件跳过了最左列 user_id，
+  只用了 status 和 created_at，导致联合索引完全失效，退化为全表扫描。
+  遵循最左前缀原则补全 user_id 条件后即可走索引。

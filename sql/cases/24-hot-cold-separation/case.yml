@@ -1,0 +1,9 @@
+title: 冷热数据分离
+category: architecture
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["冷热分离", "分表", "归档"]
+description: |
+  订单表数据量持续增长，90% 是历史订单很少被查询，全部堆在一张大表中
+  导致热数据被挤出 Buffer Pool、查询变慢。本案例演示按时间将冷热数据
+  分离到不同表，热查询只扫小表（命中缓存），需要查历史时再查冷表或 UNION ALL。

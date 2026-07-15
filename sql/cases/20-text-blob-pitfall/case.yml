@@ -1,0 +1,9 @@
+title: TEXT/BLOB 字段性能陷阱
+category: ddl
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["TEXT", "BLOB", "回表", "SELECT *"]
+description: |
+  表中包含 TEXT 大字段时，SELECT * 会将 TEXT 内容也读入内存，导致回表代价极高。
+  本案例演示 SELECT * 读取 TEXT 字段的性能问题，以及通过只查必要列
+  避免读取大字段、减少回表数据量的优化方案。

@@ -1,0 +1,10 @@
+title: 多条件动态筛选索引设计
+category: architecture
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["动态筛选", "联合索引", "多条件查询"]
+description: |
+  电商商品搜索中用户可能按 category、price 范围、status 任意组合筛选，
+  单列索引无法覆盖多条件查询，优化器往往只选一个索引后大量回表过滤。
+  本案例演示通过联合索引 idx_category_status_price 覆盖最常见的筛选组合，
+  让多条件查询高效走索引，减少回表次数。

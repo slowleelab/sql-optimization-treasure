@@ -1,0 +1,9 @@
+title: 多表 JOIN 顺序控制
+category: join
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["多表JOIN", "JOIN顺序", "STRAIGHT_JOIN"]
+description: |
+  3 张表 JOIN 时，优化器偶尔选错 JOIN 顺序，用大表做驱动表导致中间结果集
+  膨胀、性能骤降。用 STRAIGHT_JOIN 手动指定"小表 -> 中表 -> 大表"的顺序，
+  让每步 JOIN 都用小结果集驱动，显著减少扫描行数。

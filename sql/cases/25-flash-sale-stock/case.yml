@@ -1,0 +1,9 @@
+title: 秒杀场景库存扣减
+category: architecture
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["秒杀", "库存扣减", "乐观锁", "防超卖"]
+description: |
+  秒杀场景下高并发扣减库存，先查后改（SELECT 再 UPDATE）是非原子操作，
+  并发下会导致超卖。本案例演示通过原子条件更新 WHERE stock > 0
+  实现乐观锁防超卖，单条 UPDATE 利用行锁保证扣减的原子性。

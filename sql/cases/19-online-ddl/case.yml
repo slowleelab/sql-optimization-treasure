@@ -1,0 +1,10 @@
+title: 大表加索引 Online DDL
+category: ddl
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["Online DDL", "加索引", "ALGORITHM", "LOCK"]
+description: |
+  生产环境对大表加索引时，传统 ALGORITHM=COPY 方式会锁表并重建全表，
+  导致业务不可用。本案例对比 COPY / INPLACE / INSTANT 三种 DDL 算法，
+  展示 8.0 的 Online DDL 优势：ALGORITHM=INPLACE, LOCK=NONE 允许 DDL 期间
+  并发 DML 操作，不阻塞业务读写。

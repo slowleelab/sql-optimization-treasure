@@ -1,0 +1,8 @@
+title: 索引下推 ICP（Index Condition Pushdown）
+category: indexing
+difficulty: 3
+versions: ["5.6", "5.7", "8.0"]
+tags: ["ICP", "索引下推", "Using index condition", "5.6+"]
+description: |
+  演示 Index Condition Pushdown（索引下推）如何减少回表次数。
+  对比开启和关闭 ICP 时的 EXPLAIN 差异，理解 Using index condition 的含义。
