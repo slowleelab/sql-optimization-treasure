@@ -2,7 +2,7 @@ name: 部署文档站
 on:
   push:
     branches: [main, master]
-    paths: ['docs/**', 'package.json']
+    paths: ['docs/**', 'package.json', '.github/workflows/deploy-docs.yml']
   workflow_dispatch:
 
 permissions:
