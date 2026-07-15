@@ -33,6 +33,9 @@ jobs:
       - name: 构建 VitePress
         run: npm run docs:build
 
+      - name: 添加 .nojekyll
+        run: touch docs/.vitepress/dist/.nojekyll
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
