@@ -5,11 +5,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%20%7C%208.0-blue.svg)](https://www.mysql.com/)
-[![CI](https://github.com/your-username/sql-optimization-treasure/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/your-username/sql-optimization-treasure/actions)
+[![CI](https://github.com/slowleelab/sql-optimization-treasure/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-optimization-treasure/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Cases](https://img.shields.io/badge/cases-25-orange.svg)](docs/cases/)
 
-📖 **在线文档**：[https://your-username.github.io/sql-optimization-treasure/](https://your-username.github.io/sql-optimization-treasure/)  
+📖 **在线文档**：[https://slowleelab.github.io/sql-optimization-treasure/](https://slowleelab.github.io/sql-optimization-treasure/)  
 🤖 **AI 对话**：接入 DeepWiki，可直接与仓库对话提问
 
 > 如果这个项目对你有帮助，欢迎 ⭐ Star 支持！你的 Star 是持续更新的动力。
@@ -34,7 +34,7 @@
 
 ```bash
 # 1. 克隆
-git clone https://github.com/your-username/sql-optimization-treasure.git
+git clone https://github.com/slowleelab/sql-optimization-treasure.git
 cd sql-optimization-treasure
 
 # 2. 启动 MySQL（同时起 5.7 和 8.0）

@@ -145,8 +145,8 @@ INNER JOIN (
 
 ## 其他贡献方式
 
-- 🐛 [报告 Bug](https://github.com/your-username/sql-optimization-treasure/issues)
-- 💡 [建议新案例](https://github.com/your-username/sql-optimization-treasure/issues)
+- 🐛 [报告 Bug](https://github.com/slowleelab/sql-optimization-treasure/issues)
+- 💡 [建议新案例](https://github.com/slowleelab/sql-optimization-treasure/issues)
 - 📝 改进文档措辞和排版
 - 🔍 审查 EXPLAIN 结果的准确性
 

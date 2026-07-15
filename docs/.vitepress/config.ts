@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 const nav = [
   { text: '指南', link: '/guide/introduction' },
   { text: '案例', link: '/cases/' },
-  { text: 'GitHub', link: 'https://github.com/your-username/sql-optimization-treasure' },
+  { text: 'GitHub', link: 'https://github.com/slowleelab/sql-optimization-treasure' },
 ]
 
 // ────────────────────────────── 侧边栏 ──────────────────────────────
@@ -112,7 +112,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-username/sql-optimization-treasure' },
+      { icon: 'github', link: 'https://github.com/slowleelab/sql-optimization-treasure' },
     ],
 
     footer: {

@@ -9,7 +9,7 @@
 ## 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-username/sql-optimization-treasure.git
+git clone https://github.com/slowleelab/sql-optimization-treasure.git
 cd sql-optimization-treasure
 ```
 
