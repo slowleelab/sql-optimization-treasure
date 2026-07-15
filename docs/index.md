@@ -11,7 +11,7 @@ hero:
       link: /guide/quick-start
     - theme: alt
       text: 浏览案例
-      link: /cases/indexing/01-deep-pagination
+      link: /cases/
 
 features:
   - title: 🐳 真能跑

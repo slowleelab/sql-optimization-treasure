@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // ────────────────────────────── 导航栏 ──────────────────────────────
 const nav = [
   { text: '指南', link: '/guide/introduction' },
-  { text: '案例', link: '/cases/indexing/01-deep-pagination' },
+  { text: '案例', link: '/cases/' },
   { text: 'GitHub', link: 'https://github.com/your-username/sql-optimization-treasure' },
 ]
 
