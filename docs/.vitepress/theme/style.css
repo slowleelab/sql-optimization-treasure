@@ -1,0 +1,443 @@
+/* ============================================================
+ * SQL 优化典藏 - 自定义主题样式
+ * 增强 VitePress 默认主题的视觉效果和交互体验
+ * ============================================================ */
+
+/* ─── CSS 变量 ─── */
+:root {
+  --sql-treasure-green: #3aa675;
+  --sql-treasure-green-light: #4cc58f;
+  --sql-treasure-green-dark: #2d8559;
+  --sql-treasure-blue: #3e8ed0;
+  --sql-treasure-orange: #f0a020;
+}
+
+/* 暗色模式变量 */
+.dark {
+  --sql-treasure-green: #4cc58f;
+  --sql-treasure-green-light: #6ae0a8;
+  --sql-treasure-green-dark: #3aa675;
+}
+
+/* ─── Hero 区域增强 ─── */
+.VPHero {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--sql-treasure-green) 30%,
+    var(--sql-treasure-blue)
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgba(58, 166, 117, 0.12) 50%,
+    rgba(62, 142, 208, 0.08) 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  .VPHero {
+    --vp-home-hero-image-width: 280px;
+    --vp-home-hero-image-height: 280px;
+  }
+}
+
+/* Hero 名称渐变文字 */
+.VPHero .name.clip {
+  background: var(--vp-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+  .VPHero .name.clip {
+    font-size: 56px;
+  }
+}
+
+/* Hero tagline 样式 */
+.VPHero .text {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(
+    120deg,
+    var(--vp-c-text-1) 30%,
+    var(--sql-treasure-green)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .VPHero .text {
+    font-size: 32px;
+  }
+}
+
+/* Hero tagline 副标题 */
+.VPHero .tagline {
+  font-size: 16px;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+@media (min-width: 768px) {
+  .VPHero .tagline {
+    font-size: 18px;
+  }
+}
+
+/* Hero 按钮增强 */
+.VPHero .VPButton {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPHero .VPButton.brand {
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(58, 166, 117, 0.35);
+}
+
+.VPHero .VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(58, 166, 117, 0.45);
+}
+
+.VPHero .VPButton.alt:hover {
+  transform: translateY(-2px);
+  border-color: var(--sql-treasure-green);
+  color: var(--sql-treasure-green);
+}
+
+/* ─── Features 卡片增强 ─── */
+.VPFeatures .VPFeature {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPFeatures .VPFeature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--sql-treasure-green),
+    var(--sql-treasure-blue)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.VPFeatures .VPFeature:hover {
+  transform: translateY(-4px);
+  border-color: var(--sql-treasure-green);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(58, 166, 117, 0.12);
+}
+
+.dark .VPFeatures .VPFeature:hover {
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(76, 197, 143, 0.15);
+}
+
+.VPFeatures .VPFeature:hover::before {
+  opacity: 1;
+}
+
+/* Feature 图标动画 */
+.VPFeatures .VPFeature .icon {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPFeatures .VPFeature:hover .icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* Feature 标题 */
+.VPFeatures .VPFeature h2.title {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+/* ─── 首页自定义内容区 ─── */
+.home-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto 48px;
+  max-width: 720px;
+  padding: 0 24px;
+}
+
+.home-stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 20px 12px;
+  position: relative;
+}
+
+.home-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  bottom: 25%;
+  width: 1px;
+  background: var(--vp-c-border);
+}
+
+.home-stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--sql-treasure-green),
+    var(--sql-treasure-blue)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.home-stat-label {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* 案例分类预览 */
+.home-categories {
+  max-width: 960px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.home-categories-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(
+    120deg,
+    var(--vp-c-text-1),
+    var(--sql-treasure-green)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-categories-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: var(--vp-c-text-2);
+  margin-bottom: 32px;
+}
+
+.home-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+
+.home-category-card {
+  display: block;
+  padding: 24px 20px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-category-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--sql-treasure-green),
+    var(--sql-treasure-blue)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.home-category-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--sql-treasure-green);
+  box-shadow: 0 8px 24px rgba(58, 166, 117, 0.12);
+}
+
+.home-category-card:hover::after {
+  transform: scaleX(1);
+}
+
+.home-category-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.home-category-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--vp-c-text-1);
+}
+
+.home-category-count {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+
+/* 快速命令展示 */
+.home-quick-cmd {
+  max-width: 680px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.home-quick-cmd-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(
+    120deg,
+    var(--vp-c-text-1),
+    var(--sql-treasure-blue)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-quick-cmd-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: var(--vp-c-text-2);
+  margin-bottom: 24px;
+}
+
+.home-cmd-block {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 14px;
+  line-height: 1.8;
+  position: relative;
+  overflow-x: auto;
+}
+
+.home-cmd-block .cmd-comment {
+  color: var(--vp-c-text-3);
+}
+
+.home-cmd-block .cmd-prompt {
+  color: var(--sql-treasure-green);
+  font-weight: 600;
+}
+
+.home-cmd-block .cmd-text {
+  color: var(--vp-c-text-1);
+}
+
+/* ─── 案例总览页表格增强 ─── */
+.vp-doc table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vp-doc table th {
+  background: var(--vp-c-bg-soft);
+  font-weight: 700;
+}
+
+.vp-doc table tr:hover td {
+  background: rgba(58, 166, 117, 0.04);
+}
+
+/* ─── 代码块增强 ─── */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+}
+
+.vp-doc div[class*='language-']:hover .copy {
+  opacity: 1;
+}
+
+/* ─── 侧边栏活跃项增强 ─── */
+.VPSidebar .VPSidebarItem.is-active .link {
+  border-radius: 4px;
+}
+
+.VPSidebar .VPSidebarItem.is-active .text {
+  font-weight: 600;
+}
+
+/* ─── 滚动条美化 ─── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sql-treasure-green);
+}
+
+/* ─── 页面过渡动画 ─── */
+.VPContent {
+  transition: opacity 0.2s ease;
+}
+
+/* ─── 移动端适配 ─── */
+@media (max-width: 640px) {
+  .home-stats {
+    gap: 0;
+  }
+
+  .home-stat-number {
+    font-size: 28px;
+  }
+
+  .home-categories-title,
+  .home-quick-cmd-title {
+    font-size: 22px;
+  }
+
+  .home-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
