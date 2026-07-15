@@ -14,7 +14,7 @@ hero:
       link: /cases/
 
 features:
-  - title: 🐳 真能跑
+  - title: 真能跑
     details: Docker 起库 + 种子数据，30 秒内复现每个案例。不是贴截图，是真能 EXPLAIN 的可执行 SQL。
     icon: 🐳
   - title: 📊 量化对比
