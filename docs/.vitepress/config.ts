@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 const nav = [
   { text: '指南', link: '/guide/introduction' },
   { text: '案例', link: '/cases/' },
-  { text: 'GitHub', link: 'https://github.com/slowleelab/sql-optimization-treasure' },
+  { text: 'GitHub', link: 'https://github.com/slowleelab/sql-lab' },
 ]
 
 // ────────────────────────────── 侧边栏 ──────────────────────────────
@@ -122,40 +122,40 @@ const sidebar = {
 
 // ────────────────────────────── 站点配置 ──────────────────────────────
 export default defineConfig({
-  title: 'SQL 优化典藏',
+  title: 'SQL Lab',
   description: '一套能跑、能量化对比的 MySQL 优化实战案例集',
   lang: 'zh-CN',
   lastUpdated: true,
   cleanUrls: true,
 
-  // GitHub Pages 部署在 /sql-optimization-treasure/ 子路径下
-  base: '/sql-optimization-treasure/',
+  // GitHub Pages 部署在 /sql-lab/ 子路径下
+  base: '/sql-lab/',
 
   // 站点 URL（用于 sitemap 和 canonical 链接）
   sitemap: {
-    hostname: 'https://slowleelab.github.io/sql-optimization-treasure/',
+    hostname: 'https://slowleelab.github.io/sql-lab/',
   },
 
   head: [
     ['meta', { name: 'theme-color', content: '#3aa675' }],
-    ['link', { rel: 'icon', href: '/sql-optimization-treasure/favicon.svg' }],
+    ['link', { rel: 'icon', href: '/sql-lab/favicon.svg' }],
 
     // SEO: 关键词
     ['meta', { name: 'keywords', content: 'MySQL优化,SQL优化,EXPLAIN,索引优化,MySQL 8.0,数据库性能,Docker,慢查询,事务锁,查询改写' }],
 
     // Open Graph（社交分享卡片）
-    ['meta', { property: 'og:site_name', content: 'SQL 优化典藏' }],
+    ['meta', { property: 'og:site_name', content: 'SQL Lab' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'SQL 优化典藏 · 55 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { property: 'og:title', content: 'SQL Lab · 55 个能跑的 MySQL 优化实战案例' }],
     ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。55 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
-    ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-optimization-treasure/' }],
-    ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-optimization-treasure/og-image.svg' }],
+    ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-lab/' }],
+    ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
 
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'SQL 优化典藏 · 55 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { name: 'twitter:title', content: 'SQL Lab · 55 个能跑的 MySQL 优化实战案例' }],
     ['meta', { name: 'twitter:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
-    ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-optimization-treasure/og-image.svg' }],
+    ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
   ],
 
   themeConfig: {
@@ -179,12 +179,12 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/slowleelab/sql-optimization-treasure' },
+      { icon: 'github', link: 'https://github.com/slowleelab/sql-lab' },
     ],
 
     footer: {
       message: 'MIT Licensed',
-      copyright: 'Copyright © 2026 SQL 优化典藏',
+      copyright: 'Copyright © 2026 SQL Lab',
     },
 
     lastUpdatedText: '最后更新',

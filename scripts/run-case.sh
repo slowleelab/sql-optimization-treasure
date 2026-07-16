@@ -70,7 +70,7 @@ MYSQL_CMD="mysql -h 127.0.0.1 -P $PORT -uroot -proot sql_treasure"
 
 # ────────────────────────────── 检查容器 ──────────────────────────────
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
-echo -e "${BOLD}  SQL 优化典藏 · 案例运行器${NC}"
+echo -e "${BOLD}  SQL Lab · 案例运行器${NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════════${NC}"
 echo -e "  案例:   ${BOLD}$CASE_DIR${NC}"
 echo -e "  版本:   MySQL $MYSQL_VER  (端口 $PORT)"

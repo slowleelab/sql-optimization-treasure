@@ -16,7 +16,7 @@
   <text x="130" y="138" font-family="monospace" font-size="44" font-weight="bold" fill="white" text-anchor="middle">SQL</text>
 
   <!-- 标题 -->
-  <text x="210" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="bold" fill="#ffffff">SQL 优化典藏</text>
+  <text x="210" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="bold" fill="#ffffff">SQL Lab</text>
 
   <!-- 副标题 -->
   <text x="210" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8ec5a8">能跑、能量化对比的 MySQL 优化实战案例集</text>

@@ -1,8 +1,8 @@
 {
-  "name": "sql-optimization-treasure",
+  "name": "sql-lab",
   "version": "1.0.0",
   "type": "module",
-  "description": "SQL 优化典藏大集 - 一套能跑、能量化对比的 MySQL 优化实战案例集",
+  "description": "SQL Lab - 一套能跑、能量化对比的 MySQL 优化实战案例集",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",

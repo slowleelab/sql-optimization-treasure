@@ -56,8 +56,8 @@ const categories = [
     <p class="home-quick-cmd-subtitle">复制以下命令，一键跑通第一个案例</p>
     <div class="home-cmd-block">
       <span class="cmd-comment"># 1. 克隆仓库</span><br>
-      <span class="cmd-prompt">$ </span><span class="cmd-text">git clone https://github.com/slowleelab/sql-optimization-treasure.git</span><br>
-      <span class="cmd-prompt">$ </span><span class="cmd-text">cd sql-optimization-treasure</span><br><br>
+      <span class="cmd-prompt">$ </span><span class="cmd-text">git clone https://github.com/slowleelab/sql-lab.git</span><br>
+      <span class="cmd-prompt">$ </span><span class="cmd-text">cd sql-lab</span><br><br>
       <span class="cmd-comment"># 2. 启动 MySQL（5.7 + 8.0）</span><br>
       <span class="cmd-prompt">$ </span><span class="cmd-text">docker compose up -d</span><br><br>
       <span class="cmd-comment"># 3. 运行第一个案例</span><br>

@@ -1,6 +1,6 @@
 # 贡献指南
 
-感谢你有兴趣为 SQL 优化典藏贡献案例！这份指南会帮你快速上手。
+感谢你有兴趣为 SQL Lab贡献案例！这份指南会帮你快速上手。
 
 ## 前置准备
 
@@ -8,8 +8,8 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/slowleelab/sql-optimization-treasure.git
-cd sql-optimization-treasure
+git clone https://github.com/slowleelab/sql-lab.git
+cd sql-lab
 
 # 2. 启动 MySQL 容器（5.7 + 8.0）
 docker compose up -d
@@ -173,8 +173,8 @@ INNER JOIN (
 
 ## 其他贡献方式
 
-- 🐛 [报告 Bug](https://github.com/slowleelab/sql-optimization-treasure/issues)
-- 💡 [建议新案例](https://github.com/slowleelab/sql-optimization-treasure/issues)
+- 🐛 [报告 Bug](https://github.com/slowleelab/sql-lab/issues)
+- 💡 [建议新案例](https://github.com/slowleelab/sql-lab/issues)
 - 📝 改进文档措辞和排版
 - 🔍 审查 EXPLAIN 结果的准确性
 

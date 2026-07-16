@@ -1,15 +1,15 @@
-# SQL 优化典藏大集
+# SQL Lab
 
 > 🐳 一套**能跑、能量化对比**的 MySQL 优化实战案例集  
 > 每个案例都带真实数据，Docker 一键复现，bad/good EXPLAIN 量化对比
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%20%7C%208.0-blue.svg)](https://www.mysql.com/)
-[![CI](https://github.com/slowleelab/sql-optimization-treasure/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-optimization-treasure/actions)
+[![CI](https://github.com/slowleelab/sql-lab/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-lab/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Cases](https://img.shields.io/badge/cases-55-orange.svg)](docs/cases/)
 
-📖 **在线文档**：[https://slowleelab.github.io/sql-optimization-treasure/](https://slowleelab.github.io/sql-optimization-treasure/)  
+📖 **在线文档**：[https://slowleelab.github.io/sql-lab/](https://slowleelab.github.io/sql-lab/)  
 🤖 **AI 对话**：接入 DeepWiki，可直接与仓库对话提问
 
 > 如果这个项目对你有帮助，欢迎 ⭐ Star 支持！你的 Star 是持续更新的动力。
@@ -22,7 +22,7 @@
 
 本项目不同：
 
-| 特性 | 普通文章 | SQL 优化典藏 |
+| 特性 | 普通文章 | SQL Lab |
 |------|---------|-------------|
 | 能否复现 | ❌ 只能看 | ✅ Docker 一键跑 |
 | 数据量 | ❌ 假数据/无数据 | ✅ 百万级真实数据 |
@@ -34,8 +34,8 @@
 
 ```bash
 # 1. 克隆
-git clone https://github.com/slowleelab/sql-optimization-treasure.git
-cd sql-optimization-treasure
+git clone https://github.com/slowleelab/sql-lab.git
+cd sql-lab
 
 # 2. 启动 MySQL（同时起 5.7 和 8.0）
 docker compose up -d
@@ -148,7 +148,7 @@ type: ref    rows: 12    Extra: Using index
 ## 🛠️ 项目结构
 
 ```
-sql-optimization-treasure/
+sql-lab/
 ├── docs/                  # VitePress 文档站
 │   ├── .vitepress/        # 配置 + 自定义组件
 │   ├── guide/             # 使用指南

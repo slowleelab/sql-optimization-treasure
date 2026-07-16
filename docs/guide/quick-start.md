@@ -40,8 +40,8 @@ docker compose version
 ## 第二步：克隆项目
 
 ```bash
-git clone https://github.com/slowleelab/sql-optimization-treasure.git
-cd sql-optimization-treasure
+git clone https://github.com/slowleelab/sql-lab.git
+cd sql-lab
 ```
 
 验证文件完整：
@@ -118,7 +118,7 @@ chmod +x scripts/run-case.sh
 
 ```
 ═══════════════════════════════════════════════════════════
-  SQL 优化典藏 · 案例运行器
+  SQL Lab · 案例运行器
 ═══════════════════════════════════════════════════════════
   案例:   01-deep-pagination
   版本:   MySQL 8.0  (端口 3308)
