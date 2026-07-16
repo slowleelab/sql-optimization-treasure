@@ -1,0 +1,9 @@
+title: SELECT FOR UPDATE 锁范围
+category: transaction
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["FOR UPDATE", "锁升级", "行锁", "表锁"]
+description: |
+  SELECT FOR UPDATE 时若 WHERE 条件无索引，InnoDB 无法通过索引定位行，
+  退化为全表扫描并对所有行加锁，等同于表锁。给过滤字段加索引后，FOR UPDATE
+  只锁匹配的行，其他行不受影响，大幅提升并发能力。

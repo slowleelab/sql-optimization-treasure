@@ -1,0 +1,9 @@
+title: 前缀索引优化长字符串
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["前缀索引", "VARCHAR", "索引空间", "选择性"]
+description: |
+  URL 字段 VARCHAR(255) 建全列索引浪费大量空间。前缀索引只对字符串前 N 个字符
+  建索引，在保证足够选择性的前提下大幅节省索引空间。本案例对比全索引与前缀索引
+  的 key_len 与空间差异。

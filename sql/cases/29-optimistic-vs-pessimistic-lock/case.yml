@@ -1,0 +1,10 @@
+title: 乐观锁与悲观锁对比
+category: transaction
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["乐观锁", "悲观锁", "版本号", "并发扣减"]
+description: |
+  库存扣减场景下对比悲观锁与乐观锁。悲观锁 SELECT FOR UPDATE 在整个事务期间
+  持有行锁，高并发下请求排队等待，吞吐受限。乐观锁通过 version 版本号做 CAS
+  原子更新，仅在 UPDATE 瞬间加锁，读操作无锁并行，冲突时重试，适合读多写少
+  或冲突概率低的场景。

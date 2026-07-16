@@ -1,0 +1,9 @@
+title: UNION vs UNION ALL
+category: query-rewrite
+difficulty: 1
+versions: ["5.7", "8.0"]
+tags: ["UNION", "UNION ALL", "去重", "临时表"]
+description: |
+  UNION 会对结果集自动去重，需要创建临时表并排序去重，开销大。
+  UNION ALL 不去重，直接拼接结果，更快。当确认两个查询结果无重复时，
+  应优先使用 UNION ALL 避免不必要的去重开销。

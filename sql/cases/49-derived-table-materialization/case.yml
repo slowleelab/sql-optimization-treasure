@@ -1,0 +1,8 @@
+title: 派生表物化优化
+category: join
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["派生表", "子查询物化", "8.0优化", "条件下推"]
+description: |
+  FROM 子查询（派生表）在 5.7 中会被物化为临时表，外层 WHERE 条件无法下推到子查询内部。
+  8.0 优化器可下推条件到派生表，减少物化行数。本案例对比派生表物化与直接 GROUP BY HAVING 的差异。

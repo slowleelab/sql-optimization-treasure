@@ -1,0 +1,9 @@
+title: CTE 递归查询优化树形结构
+category: optimizer
+difficulty: 2
+versions: ["8.0"]
+tags: ["CTE", "递归查询", "树形结构", "8.0新特性"]
+description: |
+  查询组织架构树（员工-经理层级），传统写法用多次自连接，N 层需要 N 次
+  JOIN，层数固定且无法自适应。8.0 的 WITH RECURSIVE 递归 CTE 一条语句
+  即可遍历任意深度层级，代码简洁且执行高效。

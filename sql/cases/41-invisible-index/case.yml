@@ -1,0 +1,9 @@
+title: 不可见索引 Invisible Index
+category: indexing
+difficulty: 2
+versions: ["8.0"]
+tags: ["不可见索引", "invisible", "安全删索引", "8.0新特性"]
+description: |
+  想删除一个疑似无用的索引，但直接 DROP 有风险——万一有依赖该索引的查询性能骤降。
+  MySQL 8.0 支持将索引设为 INVISIBLE，优化器不再使用它，但索引仍维护。
+  先隐身观察一段时间，确认无影响后再安全删除。

@@ -1,0 +1,9 @@
+title: OPTIMIZE TABLE 碎片整理
+category: ddl
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["碎片整理", "OPTIMIZE TABLE", "空间回收", "DELETE后"]
+description: |
+  大量 DELETE 后表产生碎片，物理空间未释放，查询效率下降。
+  OPTIMIZE TABLE 重建表回收碎片，释放空间并提升查询性能。
+  本案例对比碎片整理前后的 DATA_FREE、DATA_LENGTH 和查询耗时。

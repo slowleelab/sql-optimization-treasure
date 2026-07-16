@@ -1,0 +1,8 @@
+title: 分区表 RANGE 分区优化
+category: ddl
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["分区表", "RANGE分区", "分区裁剪", "大表优化"]
+description: |
+  日志表 1000 万行按月 RANGE 分区，查询某月数据时分区裁剪只扫一个分区。
+  本案例对比普通表全表扫描与分区表分区裁剪的性能差异。

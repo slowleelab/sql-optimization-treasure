@@ -1,0 +1,9 @@
+title: 直方图统计优化选错索引
+category: optimizer
+difficulty: 3
+versions: ["8.0"]
+tags: ["直方图", "统计信息", "优化器选错索引", "8.0新特性"]
+description: |
+  status 列仅 3 个取值但分布极度不均（99% 为 status=0），优化器仅依赖
+  索引基数统计无法感知数据倾斜，可能选择 idx_status 扫描大量行。8.0 直方图
+  精确记录列值分布，帮助优化器选对 idx_user_created 索引。

@@ -1,0 +1,10 @@
+title: 唯一索引并发插入冲突
+category: transaction
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["唯一索引", "并发插入", "ON DUPLICATE KEY", "竞态条件"]
+description: |
+  并发场景下先 SELECT 检查再 INSERT 存在 TOCTOU（Time-Of-Check-Time-Of-Use）
+  竞态：两个事务都查到记录不存在，随后都执行 INSERT，导致唯一键冲突报错。
+  使用 INSERT ... ON DUPLICATE KEY UPDATE 将检查与插入/更新合并为单条原子
+  语句，消除竞态窗口，并发安全且无需应用层重试。

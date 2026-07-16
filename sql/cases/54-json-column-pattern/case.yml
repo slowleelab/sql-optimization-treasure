@@ -1,0 +1,9 @@
+title: JSON 字段使用模式
+category: architecture
+difficulty: 2
+versions: ["8.0"]
+tags: ["JSON", "虚拟列", "函数索引", "8.0新特性"]
+description: |
+  商品属性用 JSON 字段灵活存储，但直接对 JSON 内部字段做条件查询会触发全表扫描。
+  MySQL 8.0 可通过虚拟列 + 索引（或函数索引）将 JSON 字段提取为可索引列，
+  让 JSON 内部字段的等值/范围查询走索引。

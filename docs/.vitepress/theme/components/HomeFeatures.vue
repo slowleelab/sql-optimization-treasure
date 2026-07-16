@@ -5,18 +5,20 @@
  */
 
 const stats = [
-  { number: '25', label: '精选案例' },
-  { number: '5', label: '场景分类' },
+  { number: '55', label: '精选案例' },
+  { number: '7', label: '场景分类' },
   { number: '2', label: 'MySQL 版本' },
   { number: '100%', label: '可复现' },
 ]
 
 const categories = [
-  { icon: '🔑', name: '索引设计与失效', count: '9 个案例', link: '/cases/indexing/01-deep-pagination' },
-  { icon: '✏️', name: '查询改写', count: '5 个案例', link: '/cases/query-rewrite/10-subquery-to-join' },
-  { icon: '🔗', name: 'JOIN 优化', count: '4 个案例', link: '/cases/join/15-small-drive-large' },
-  { icon: '🏗️', name: 'DDL 与大表', count: '3 个案例', link: '/cases/ddl/19-online-ddl' },
-  { icon: '🏗️', name: '架构级优化', count: '4 个案例', link: '/cases/architecture/22-dynamic-filter' },
+  { icon: '🔑', name: '索引设计与失效', count: '14 个案例', link: '/cases/indexing/01-deep-pagination' },
+  { icon: '✏️', name: '查询改写', count: '9 个案例', link: '/cases/query-rewrite/10-subquery-to-join' },
+  { icon: '🔗', name: 'JOIN 优化', count: '7 个案例', link: '/cases/join/15-small-drive-large' },
+  { icon: '🔨', name: 'DDL 与大表', count: '6 个案例', link: '/cases/ddl/19-online-ddl' },
+  { icon: '🏗️', name: '架构级优化', count: '7 个案例', link: '/cases/architecture/22-dynamic-filter' },
+  { icon: '🔒', name: '事务与锁', count: '7 个案例', link: '/cases/transaction/26-deadlock-analysis' },
+  { icon: '⚡', name: '优化器与 8.0', count: '5 个案例', link: '/cases/optimizer/33-descending-index' },
   { icon: '🚀', name: '全部案例', count: '查看总览', link: '/cases/' },
 ]
 </script>
@@ -32,8 +34,8 @@ const categories = [
 
   <!-- 分类导航 -->
   <div class="home-categories">
-    <h2 class="home-categories-title">五大场景 · 25 个案例</h2>
-    <p class="home-categories-subtitle">从索引失效到架构设计，覆盖 MySQL 优化全链路</p>
+    <h2 class="home-categories-title">七大场景 · 55 个案例</h2>
+    <p class="home-categories-subtitle">从索引失效到事务锁、从查询改写到 8.0 新特性，覆盖 MySQL 优化全链路</p>
     <div class="home-category-grid">
       <a
         v-for="c in categories"

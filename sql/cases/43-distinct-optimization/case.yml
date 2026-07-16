@@ -1,0 +1,8 @@
+title: DISTINCT 优化
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["DISTINCT", "临时表", "覆盖索引", "去重"]
+description: |
+  对大表做 SELECT DISTINCT 去重时，无索引支撑会产生 Using temporary 临时表去重。
+  通过建立合适索引让优化器走 Using index for group-by，利用索引有序性免临时表去重。

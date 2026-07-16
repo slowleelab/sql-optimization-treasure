@@ -1,0 +1,9 @@
+title: 大表批量 INSERT 优化
+category: ddl
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["批量插入", "INSERT优化", "事务提交", "LOAD DATA"]
+description: |
+  导入 10 万行数据时，逐行 INSERT 每行一个事务，提交开销巨大。
+  本案例对比单行 INSERT 与批量 INSERT + 事务批量提交的性能差异，
+  演示批量插入、事务批量提交、LOAD DATA 等优化手段。

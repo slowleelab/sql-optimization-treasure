@@ -1,0 +1,9 @@
+title: NOT IN vs LEFT JOIN IS NULL
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["NOT IN", "LEFT JOIN", "反连接", "子查询改写"]
+description: |
+  查询"没有下过订单的用户"，用 NOT IN 子查询性能差且对 NULL 敏感。
+  改写为 LEFT JOIN ... IS NULL（反连接）后，优化器可用索引高效完成，
+  且不受 NULL 值干扰。

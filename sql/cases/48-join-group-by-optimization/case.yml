@@ -1,0 +1,9 @@
+title: JOIN + GROUP BY 聚合优化
+category: join
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["JOIN", "GROUP BY", "聚合", "临时表", "先聚合后JOIN"]
+description: |
+  订单表(100万行) JOIN 用户表(1万行)后按用户地区 GROUP BY 统计订单数和总金额。
+  bad 方案先 JOIN 再 GROUP BY，100 万行 JOIN 后产生大临时表再聚合。
+  good 方案先在订单表按 user_id 聚合，再用小结果集 JOIN 用户表按地区二次聚合。

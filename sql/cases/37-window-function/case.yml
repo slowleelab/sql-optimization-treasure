@@ -1,0 +1,10 @@
+title: 窗口函数替代相关子查询
+category: optimizer
+difficulty: 2
+versions: ["8.0"]
+tags: ["窗口函数", "ROW_NUMBER", "相关子查询", "8.0新特性"]
+description: |
+  查询每个部门薪资最高的员工，传统写法用相关子查询对每行执行一次
+  SELECT MAX(salary)，N 行触发 N 次子查询。8.0 用 ROW_NUMBER()
+  OVER (PARTITION BY dept ORDER BY salary DESC) 窗口函数一次扫描
+  完成分组排序，简洁高效。

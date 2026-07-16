@@ -1,0 +1,9 @@
+title: 降序索引消除 filesort
+category: optimizer
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["降序索引", "filesort", "8.0新特性", "ORDER BY"]
+description: |
+  查询 ORDER BY created_at DESC LIMIT N，5.7 创建的 DESC 索引被解析为 ASC 升序，
+  优化器无法利用索引的逆序扫描，仍需 filesort。8.0 真正支持降序索引，
+  索引按 created_at DESC 物理存储，直接消除 filesort。

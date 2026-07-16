@@ -1,0 +1,9 @@
+title: 死锁排查与分析
+category: transaction
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["死锁", "gap lock", "next-key lock", "事务顺序"]
+description: |
+  两个事务反向更新同一批订单（事务A先更新订单1再更新订单2，事务B先更新订单2
+  再更新订单1），加锁顺序不一致形成循环等待，导致 InnoDB 死锁。按一致的加锁
+  顺序更新（总是先锁 id 小的再锁 id 大的）可从根本上避免死锁。

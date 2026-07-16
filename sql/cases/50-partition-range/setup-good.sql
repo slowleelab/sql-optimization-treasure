@@ -1,0 +1,43 @@
+-- setup-good.sql: 创建分区表并迁移数据
+--
+-- 步骤:
+--   1. 删除普通表，重建为按月 RANGE 分区表
+--   2. 分区键 created_at 必须包含在主键中: PRIMARY KEY (id, created_at)
+--   3. 重新执行 seed.sql 填充数据
+--   4. 验证分区信息
+
+DROP TABLE IF EXISTS t_partition_log;
+
+CREATE TABLE t_partition_log (
+    id           BIGINT        NOT NULL AUTO_INCREMENT,
+    user_id      BIGINT        NOT NULL              COMMENT '用户ID',
+    log_level    TINYINT       NOT NULL DEFAULT 0    COMMENT '日志级别: 0=DEBUG 1=INFO 2=WARN 3=ERROR',
+    message      VARCHAR(500)  NOT NULL              COMMENT '日志内容',
+    created_at   DATETIME      NOT NULL              COMMENT '日志时间',
+    PRIMARY KEY (id, created_at),
+    KEY idx_created (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='日志表(按月RANGE分区)'
+PARTITION BY RANGE (TO_DAYS(created_at)) (
+    PARTITION p202401 VALUES LESS THAN (TO_DAYS('2024-02-01')),
+    PARTITION p202402 VALUES LESS THAN (TO_DAYS('2024-03-01')),
+    PARTITION p202403 VALUES LESS THAN (TO_DAYS('2024-04-01')),
+    PARTITION p202404 VALUES LESS THAN (TO_DAYS('2024-05-01')),
+    PARTITION p202405 VALUES LESS THAN (TO_DAYS('2024-06-01')),
+    PARTITION p202406 VALUES LESS THAN (TO_DAYS('2024-07-01')),
+    PARTITION p202407 VALUES LESS THAN (TO_DAYS('2024-08-01')),
+    PARTITION p202408 VALUES LESS THAN (TO_DAYS('2024-09-01')),
+    PARTITION p202409 VALUES LESS THAN (TO_DAYS('2024-10-01')),
+    PARTITION p202410 VALUES LESS THAN (TO_DAYS('2024-11-01')),
+    PARTITION p202411 VALUES LESS THAN (TO_DAYS('2024-12-01')),
+    PARTITION p202412 VALUES LESS THAN (TO_DAYS('2025-01-01')),
+    PARTITION pmax    VALUES LESS THAN MAXVALUE
+);
+
+-- 提示: 执行此 DDL 后，需重新运行 seed.sql 填充分区表数据
+-- 然后执行 good.sql 对比分区裁剪效果
+
+-- 验证分区信息
+SELECT TABLE_NAME, PARTITION_NAME, TABLE_ROWS
+FROM INFORMATION_SCHEMA.PARTITIONS
+WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 't_partition_log'
+ORDER BY PARTITION_ORDINAL_POSITION;

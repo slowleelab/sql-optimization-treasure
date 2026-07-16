@@ -1,0 +1,9 @@
+title: 自增主键跳跃与性能
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["AUTO_INCREMENT", "跳号", "自增锁", "innodb_autoinc_lock_mode"]
+description: |
+  批量 INSERT 失败回滚会导致 AUTO_INCREMENT 跳号，且默认自增锁模式下批量插入
+  会预分配连续 ID 段、失败后整段丢弃。大量跳号长期累积有 BIGINT 溢出风险。
+  本案例演示跳号现象与 innodb_autoinc_lock_mode 对并发插入的影响。

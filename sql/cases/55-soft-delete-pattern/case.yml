@@ -1,0 +1,9 @@
+title: 软删除设计模式
+category: architecture
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["软删除", "deleted_at", "联合索引", "查询过滤"]
+description: |
+  用 deleted_at 字段标记删除而非物理删除，但查询时需要 WHERE deleted_at IS NULL
+  过滤。索引设计不当会导致全表扫描 + filesort。本案例演示为软删除场景设计
+  覆盖查询条件的联合索引 (author_id, deleted_at, created_at)。

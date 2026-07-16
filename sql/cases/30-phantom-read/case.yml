@@ -1,0 +1,10 @@
+title: 幻读问题与解决
+category: transaction
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["幻读", "间隙锁", "RR隔离", "MVCC"]
+description: |
+  RR 隔离级别下，事务内普通快照读虽一致，但当前读（FOR UPDATE / UPDATE 触发）
+  会看到其他事务新插入的幻影行，产生幻读。通过 SELECT FOR UPDATE 加间隙锁或
+  切换到 SERIALIZABLE 隔离级别，锁定查询范围的间隙，阻止其他事务插入，从根本
+  上消除幻读。

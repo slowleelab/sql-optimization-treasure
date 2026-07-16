@@ -1,0 +1,9 @@
+title: ORDER BY LIMIT 无索引优化
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["ORDER BY", "LIMIT", "filesort", "排序优化"]
+description: |
+  ORDER BY created_at DESC LIMIT 10 在无索引时需全表扫描后 filesort 排序，
+  数据量大时排序开销显著。给排序字段建索引后，B+ 树天然有序，只需取前 N 条即可，
+  消除 filesort。

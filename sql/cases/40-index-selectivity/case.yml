@@ -1,0 +1,8 @@
+title: 索引选择性评估
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["选择性", "低基数列", "联合索引", "cardinality"]
+description: |
+  status 列只有 0/1/2 三个值，单独建索引选择性极低，优化器评估后宁可全表扫描也不走索引。
+  通过建立 (status, user_id) 联合索引提高整体选择性，让索引真正被使用。

@@ -1,0 +1,9 @@
+title: 间隙锁导致插入阻塞
+category: transaction
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["间隙锁", "RR隔离", "插入阻塞", "锁范围"]
+description: |
+  RR（可重复读）隔离级别下，事务A执行范围查询 FOR UPDATE 会加间隙锁，
+  锁定索引区间内的间隙。事务B尝试向该间隙插入数据时被阻塞，直到锁等待超时。
+  通过缩小锁范围或切换到 RC 隔离级别可消除间隙锁，避免插入阻塞。

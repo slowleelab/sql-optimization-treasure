@@ -1,0 +1,9 @@
+title: 冗余索引清理
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["冗余索引", "索引清理", "写入开销"]
+description: |
+  表上同时存在 idx(user_id) 和 idx(user_id, created_at)，前者是后者的前缀冗余索引。
+  冗余索引既无法被优化器选中，又会拖慢写入、浪费空间。本案例演示删除冗余索引后
+  优化器选择更清晰，写入开销显著下降。
