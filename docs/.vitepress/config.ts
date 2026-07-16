@@ -131,9 +131,31 @@ export default defineConfig({
   // GitHub Pages 部署在 /sql-optimization-treasure/ 子路径下
   base: '/sql-optimization-treasure/',
 
+  // 站点 URL（用于 sitemap 和 canonical 链接）
+  sitemap: {
+    hostname: 'https://slowleelab.github.io/sql-optimization-treasure/',
+  },
+
   head: [
     ['meta', { name: 'theme-color', content: '#3aa675' }],
     ['link', { rel: 'icon', href: '/sql-optimization-treasure/favicon.svg' }],
+
+    // SEO: 关键词
+    ['meta', { name: 'keywords', content: 'MySQL优化,SQL优化,EXPLAIN,索引优化,MySQL 8.0,数据库性能,Docker,慢查询,事务锁,查询改写' }],
+
+    // Open Graph（社交分享卡片）
+    ['meta', { property: 'og:site_name', content: 'SQL 优化典藏' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'SQL 优化典藏 · 55 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。55 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
+    ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-optimization-treasure/' }],
+    ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-optimization-treasure/og-image.svg' }],
+
+    // Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'SQL 优化典藏 · 55 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { name: 'twitter:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
+    ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-optimization-treasure/og-image.svg' }],
   ],
 
   themeConfig: {

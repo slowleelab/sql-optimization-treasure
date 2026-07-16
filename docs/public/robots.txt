@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slowleelab.github.io/sql-optimization-treasure/sitemap.xml

@@ -1,0 +1,36 @@
+name: 文档构建预检
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'docs/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  build:
+    name: VitePress 构建检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 构建文档
+        run: npm run docs:build
+
+      - name: 检查死链
+        run: |
+          if grep -r "dead link" docs/.vitepress/dist/ 2>/dev/null; then
+            echo "⚠️ 发现死链，请检查"
+            exit 1
+          else
+            echo "✅ 无死链"
+          fi

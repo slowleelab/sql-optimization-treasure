@@ -2,14 +2,42 @@
 
 感谢你有兴趣为 SQL 优化典藏贡献案例！这份指南会帮你快速上手。
 
+## 前置准备
+
+在开始之前，请确保本地环境已就绪：
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/slowleelab/sql-optimization-treasure.git
+cd sql-optimization-treasure
+
+# 2. 启动 MySQL 容器（5.7 + 8.0）
+docker compose up -d
+
+# 3. 安装文档站依赖（用于本地预览文档）
+npm install
+
+# 4. 验证环境（运行一个已有案例）
+./scripts/run-case.sh 01-deep-pagination
+```
+
 ## 贡献一个案例
 
 ### 1. 创建案例目录
 
-在 `sql/cases/` 下新建一个目录，命名格式 `序号-英文短名`：
+推荐使用脚手架脚本快速创建案例骨架：
 
 ```bash
-mkdir sql/cases/26-your-case-name
+# 用法: ./scripts/new-case.sh <编号-名称> <分类>
+./scripts/new-case.sh 56-your-case-name indexing
+```
+
+支持的分类：`indexing` / `query-rewrite` / `join` / `ddl` / `architecture` / `transaction` / `optimizer`
+
+也可以手动创建：
+
+```bash
+mkdir -p sql/cases/56-your-case-name/expected
 ```
 
 ### 2. 必需文件

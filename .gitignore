@@ -17,7 +17,19 @@ Thumbs.db
 
 # Env
 .env
-.env.local
+.env.*
+*.local
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temp & coverage
+tmp/
+*.tmp
+coverage/
+
+# SQL backup
+*.sql.bak
