@@ -171,8 +171,8 @@ type: ref    rows: 12    Extra: Using index
   - 07-range-after-index
   - 08-covering-index
   - 09-index-condition-pushdown
-  - 10-subquery-to-join
-  ...（共 25 个）
+  - 15-subquery-to-join
+  ...（共 55 个）
 ```
 
 ### 运行其他案例
@@ -181,8 +181,8 @@ type: ref    rows: 12    Extra: Using index
 # 运行第 3 个案例（隐式类型转换）
 ./scripts/run-case.sh 03-implicit-type-conversion
 
-# 运行第 15 个案例（小表驱动大表）
-./scripts/run-case.sh 15-small-drive-large
+# 运行第 24 个案例（小表驱动大表）
+./scripts/run-case.sh 24-small-drive-large
 ```
 
 ::: tip 案例名怎么找
@@ -321,5 +321,5 @@ docker compose ps   # 确认 STATUS 为 healthy
 ## 下一步
 
 - [如何阅读案例](./how-to-read) — 了解每个案例的标准结构
-- [案例总览](../cases/) — 浏览全部 25 个案例
+- [案例总览](../cases/) — 浏览全部 55 个案例
 - [深度分页案例](../cases/indexing/01-deep-pagination) — 从第一个案例开始深入

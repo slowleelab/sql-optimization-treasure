@@ -14,12 +14,12 @@ const stats = [
 
 const categories = [
   { icon: '🔑', name: '索引设计与失效', count: '14 个案例', link: withBase('/cases/indexing/01-deep-pagination') },
-  { icon: '✏️', name: '查询改写', count: '9 个案例', link: withBase('/cases/query-rewrite/10-subquery-to-join') },
-  { icon: '🔗', name: 'JOIN 优化', count: '7 个案例', link: withBase('/cases/join/15-small-drive-large') },
-  { icon: '🔨', name: 'DDL 与大表', count: '6 个案例', link: withBase('/cases/ddl/19-online-ddl') },
-  { icon: '🏗️', name: '架构级优化', count: '7 个案例', link: withBase('/cases/architecture/22-dynamic-filter') },
-  { icon: '🔒', name: '事务与锁', count: '7 个案例', link: withBase('/cases/transaction/26-deadlock-analysis') },
-  { icon: '⚡', name: '优化器与 8.0', count: '5 个案例', link: withBase('/cases/optimizer/33-descending-index') },
+  { icon: '✏️', name: '查询改写', count: '9 个案例', link: withBase('/cases/query-rewrite/15-subquery-to-join') },
+  { icon: '🔗', name: 'JOIN 优化', count: '7 个案例', link: withBase('/cases/join/24-small-drive-large') },
+  { icon: '🔨', name: 'DDL 与大表', count: '6 个案例', link: withBase('/cases/ddl/31-online-ddl') },
+  { icon: '🏗️', name: '架构级优化', count: '7 个案例', link: withBase('/cases/architecture/37-dynamic-filter') },
+  { icon: '🔒', name: '事务与锁', count: '7 个案例', link: withBase('/cases/transaction/44-deadlock-analysis') },
+  { icon: '⚡', name: '优化器与 8.0', count: '5 个案例', link: withBase('/cases/optimizer/51-descending-index') },
   { icon: '🚀', name: '全部案例', count: '查看总览', link: withBase('/cases/') },
 ]
 </script>
