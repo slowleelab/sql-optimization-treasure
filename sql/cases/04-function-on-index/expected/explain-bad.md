@@ -4,9 +4,9 @@
 
 ```
 +----+-------------+--------------+------------+------+---------------+------+---------+------+--------+----------+-------------+
-| id | select_type | table        | partitions | type | possible_keys | key  | key_len | ref  |   rows | filtered | Extra       |
+| id | select_type | table        | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
 +----+-------------+--------------+------------+------+---------------+------+---------+------+--------+----------+-------------+
-|  1 | SIMPLE      | t_order_func | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 299,687 |   100.00 | Using where |
+|  1 | SIMPLE      | t_order_func | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 299687 |   100.00 | Using where |
 +----+-------------+--------------+------------+------+---------------+------+---------+------+--------+----------+-------------+
 ```
 

@@ -6,7 +6,7 @@
 +----+-------------+--------------+------------+-------+---------------+------------+---------+------+------+----------+-----------------------+
 | id | select_type | table        | partitions | type  | possible_keys | key        | key_len | ref  | rows | filtered | Extra                 |
 +----+-------------+--------------+------------+-------+---------------+------------+---------+------+------+----------+-----------------------+
-|  1 | SIMPLE      | t_order_func | NULL       | range | idx_created   | idx_created| 5       | NULL |    3 |   100.00 | Using index condition |
+|  1 | SIMPLE      | t_order_func | NULL       | range | idx_created   | idx_created| 6       | NULL |    3 |   100.00 | Using index condition |
 +----+-------------+--------------+------------+-------+---------------+------------+---------+------+------+----------+-----------------------+
 ```
 
@@ -16,6 +16,7 @@
 |------|-----|------|
 | type | `range` | 索引范围扫描 |
 | key | `idx_created` | 索引被正确使用 |
+| key_len | `6` | DATETIME 占 6 字节，created_at 列参与索引范围扫描 |
 | rows | `3` | 精确定位到 3 行 |
 | Extra | `Using index condition` | 索引条件下推 |
 

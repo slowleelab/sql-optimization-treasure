@@ -4,9 +4,9 @@
 
 ```
 +----+-------------+----------+------------+------+---------------+------+---------+------+--------+----------+-------------+
-| id | select_type | table    | partitions | type | possible_keys | key  | key_len | ref  |   rows | filtered | Extra       |
+| id | select_type | table    | partitions | type | possible_keys | key  | key_len | ref  | rows   | filtered | Extra       |
 +----+-------------+----------+------------+------+---------------+------+---------+------+--------+----------+-------------+
-|  1 | SIMPLE      | t_user_or| NULL       | ALL  | NULL          | NULL | NULL    | NULL | 299,687 |    1.67 | Using where |
+|  1 | SIMPLE      | t_user_or| NULL       | ALL  | NULL          | NULL | NULL    | NULL | 299687 |    12.49 | Using where |
 +----+-------------+----------+------------+------+---------------+------+---------+------+--------+----------+-------------+
 ```
 
@@ -18,7 +18,7 @@
 | possible_keys | `NULL` | 虽然 phone 有 idx_phone，但 city 无索引，OR 导致整体无法走索引 |
 | key | `NULL` | 无索引被使用 |
 | rows | ~299,687 | 扫描全部 30 万行 |
-| filtered | 1.67% | 绝大多数行被过滤掉 |
+| filtered | 12.49% | 绝大多数行被过滤掉 |
 | Extra | `Using where` | 逐行检查 phone 或 city 条件 |
 
 ## 为什么慢
