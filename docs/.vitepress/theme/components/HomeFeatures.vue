@@ -3,6 +3,7 @@
  * HomeFeatures - 首页自定义内容区
  * 在 VitePress 默认 features 下方渲染：统计数据 + 分类导航 + 快速命令
  */
+import { withBase } from 'vitepress'
 
 const stats = [
   { number: '55', label: '精选案例' },
@@ -12,14 +13,14 @@ const stats = [
 ]
 
 const categories = [
-  { icon: '🔑', name: '索引设计与失效', count: '14 个案例', link: '/cases/indexing/01-deep-pagination' },
-  { icon: '✏️', name: '查询改写', count: '9 个案例', link: '/cases/query-rewrite/10-subquery-to-join' },
-  { icon: '🔗', name: 'JOIN 优化', count: '7 个案例', link: '/cases/join/15-small-drive-large' },
-  { icon: '🔨', name: 'DDL 与大表', count: '6 个案例', link: '/cases/ddl/19-online-ddl' },
-  { icon: '🏗️', name: '架构级优化', count: '7 个案例', link: '/cases/architecture/22-dynamic-filter' },
-  { icon: '🔒', name: '事务与锁', count: '7 个案例', link: '/cases/transaction/26-deadlock-analysis' },
-  { icon: '⚡', name: '优化器与 8.0', count: '5 个案例', link: '/cases/optimizer/33-descending-index' },
-  { icon: '🚀', name: '全部案例', count: '查看总览', link: '/cases/' },
+  { icon: '🔑', name: '索引设计与失效', count: '14 个案例', link: withBase('/cases/indexing/01-deep-pagination') },
+  { icon: '✏️', name: '查询改写', count: '9 个案例', link: withBase('/cases/query-rewrite/10-subquery-to-join') },
+  { icon: '🔗', name: 'JOIN 优化', count: '7 个案例', link: withBase('/cases/join/15-small-drive-large') },
+  { icon: '🔨', name: 'DDL 与大表', count: '6 个案例', link: withBase('/cases/ddl/19-online-ddl') },
+  { icon: '🏗️', name: '架构级优化', count: '7 个案例', link: withBase('/cases/architecture/22-dynamic-filter') },
+  { icon: '🔒', name: '事务与锁', count: '7 个案例', link: withBase('/cases/transaction/26-deadlock-analysis') },
+  { icon: '⚡', name: '优化器与 8.0', count: '5 个案例', link: withBase('/cases/optimizer/33-descending-index') },
+  { icon: '🚀', name: '全部案例', count: '查看总览', link: withBase('/cases/') },
 ]
 </script>
 
