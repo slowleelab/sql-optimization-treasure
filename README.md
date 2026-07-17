@@ -7,7 +7,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%20%7C%208.0-blue.svg)](https://www.mysql.com/)
 [![CI](https://github.com/slowleelab/sql-lab/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-lab/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Cases](https://img.shields.io/badge/cases-70-orange.svg)](docs/cases/)
+[![Cases](https://img.shields.io/badge/cases-71-orange.svg)](docs/cases/)
 
 📖 **在线文档**：[https://slowleelab.github.io/sql-lab/](https://slowleelab.github.io/sql-lab/)  
 🤖 **AI 对话**：接入 DeepWiki，可直接与仓库对话提问
@@ -60,9 +60,9 @@ type: ref    rows: 12    Extra: Using index
 
 ## 📚 案例总览
 
-共 **70 个精选案例**，覆盖 MySQL 优化的七大核心场景：
+共 **71 个精选案例**，覆盖 MySQL 优化的七大核心场景：
 
-### 一、索引设计与失效（16 个）
+### 一、索引设计与失效（17 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 01 | [深度分页 LIMIT 大偏移](docs/cases/indexing/01-deep-pagination.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -81,6 +81,7 @@ type: ref    rows: 12    Extra: Using index
 | 14 | [自增主键跳跃与性能](docs/cases/indexing/14-auto-increment-gap.md) | ⭐⭐ | 5.7 & 8.0 |
 | 56 | [索引合并 Index Merge 陷阱](docs/cases/indexing/56-index-merge-pitfall.md) | ⭐⭐ | 5.7 & 8.0 |
 | 57 | [索引跳跃扫描 Skip Scan](docs/cases/indexing/57-skip-scan.md) | ⭐⭐ | 8.0+ |
+| 71 | [游标分页替代深分页](docs/cases/indexing/71-cursor-pagination.md) | ⭐⭐ | 5.7 & 8.0 |
 
 ### 二、查询改写（11 个）
 | # | 案例 | 难度 | 版本 |
@@ -167,7 +168,7 @@ sql-lab/
 ├── docs/                  # VitePress 文档站
 │   ├── .vitepress/        # 配置 + 自定义组件
 │   ├── guide/             # 使用指南
-│   └── cases/             # 70 篇案例文档
+│   └── cases/             # 71 篇案例文档
 ├── sql/cases/             # 可运行 SQL（schema + seed + bad + good）
 ├── scripts/run-case.sh    # 一键运行案例
 ├── docker-compose.yml     # MySQL 5.7 + 8.0

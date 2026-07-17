@@ -40,6 +40,7 @@ const sidebar = {
         { text: '14 · 自增主键跳跃与性能', link: '/cases/indexing/14-auto-increment-gap' },
         { text: '56 · 索引合并 Index Merge 陷阱', link: '/cases/indexing/56-index-merge-pitfall' },
         { text: '57 · 索引跳跃扫描 Skip Scan', link: '/cases/indexing/57-skip-scan' },
+        { text: '71 · 游标分页替代深分页', link: '/cases/indexing/71-cursor-pagination' },
       ],
     },
     {
@@ -161,14 +162,14 @@ export default defineConfig({
     // Open Graph（社交分享卡片）
     ['meta', { property: 'og:site_name', content: 'SQL Lab' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'SQL Lab · 70 个能跑的 MySQL 优化实战案例' }],
-    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。70 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
+    ['meta', { property: 'og:title', content: 'SQL Lab · 71 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。71 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-lab/' }],
     ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
 
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'SQL Lab · 70 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { name: 'twitter:title', content: 'SQL Lab · 71 个能跑的 MySQL 优化实战案例' }],
     ['meta', { name: 'twitter:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
   ],

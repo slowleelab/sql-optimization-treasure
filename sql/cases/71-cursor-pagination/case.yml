@@ -1,0 +1,9 @@
+title: 游标分页替代深分页
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["分页", "游标分页", "Keyset Pagination", "深分页"]
+description: |
+  LIMIT OFFSET 深分页随翻页深度增加，性能线性退化。
+  本案例演示游标分页（Keyset Pagination）方案，
+  无论翻到第几页，扫描行数恒定，性能不随页深度变化。
