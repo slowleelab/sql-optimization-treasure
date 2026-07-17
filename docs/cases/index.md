@@ -1,6 +1,6 @@
 # 案例总览
 
-共 **71 个精选案例**，覆盖 MySQL 优化的七大核心场景。每个案例都带真实数据，可一键复现。
+共 **73 个精选案例**，覆盖 MySQL 优化的七大核心场景。每个案例都带真实数据，可一键复现。
 
 ## 一、索引设计与失效（17 个）
 
@@ -54,7 +54,7 @@
 | 60 | [STRAIGHT_JOIN 强制驱动顺序](./join/60-straight-join) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 61 | [LEFT JOIN 改 INNER JOIN](./join/61-left-join-to-inner) | ⭐⭐ | 5.7 & 8.0 |
 
-## 四、DDL 与大表（8 个）
+## 四、DDL 与大表（9 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -66,8 +66,9 @@
 | 36 | [OPTIMIZE TABLE 碎片整理](./ddl/36-optimize-table-fragmentation) | ⭐⭐ | 5.7 & 8.0 |
 | 62 | [大表加列 INSTANT（8.0）](./ddl/62-instant-add-column) | ⭐⭐ | 8.0+ |
 | 63 | [修改字段类型锁表](./ddl/63-modify-column-type) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 73 | [大字段垂直拆表](./ddl/73-vertical-split-text) | ⭐⭐ | 5.7 & 8.0 |
 
-## 五、架构级优化（9 个）
+## 五、架构级优化（10 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -80,6 +81,7 @@
 | 43 | [软删除设计模式](./architecture/43-soft-delete-pattern) | ⭐⭐ | 5.7 & 8.0 |
 | 64 | [分库分表路由策略](./architecture/64-sharding-route) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 65 | [缓存穿透与布隆过滤器](./architecture/65-cache-penetration) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 72 | [自增主键耗尽与分布式 ID](./architecture/72-auto-inc-exhaustion) | ⭐⭐⭐ | 5.7 & 8.0 |
 
 ## 六、事务与锁（9 个）
 

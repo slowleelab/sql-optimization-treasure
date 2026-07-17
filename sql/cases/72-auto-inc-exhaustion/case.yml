@@ -1,0 +1,9 @@
+title: 自增主键耗尽与分布式 ID
+category: architecture
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["AUTO_INCREMENT", "INT 溢出", "雪花ID", "分布式ID", "主键设计"]
+description: |
+  INT 自增主键达到 21 亿上限后 INSERT 直接报错，业务全面中断。
+  本案例演示 INT 上限耗尽现象、紧急扩容 BIGINT 的代价，
+  以及用雪花算法（Snowflake）替代自增主键的长期方案。

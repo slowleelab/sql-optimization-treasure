@@ -7,7 +7,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%20%7C%208.0-blue.svg)](https://www.mysql.com/)
 [![CI](https://github.com/slowleelab/sql-lab/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-lab/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Cases](https://img.shields.io/badge/cases-71-orange.svg)](docs/cases/)
+[![Cases](https://img.shields.io/badge/cases-73-orange.svg)](docs/cases/)
 
 📖 **在线文档**：[https://slowleelab.github.io/sql-lab/](https://slowleelab.github.io/sql-lab/)  
 🤖 **AI 对话**：接入 DeepWiki，可直接与仓库对话提问
@@ -60,7 +60,7 @@ type: ref    rows: 12    Extra: Using index
 
 ## 📚 案例总览
 
-共 **71 个精选案例**，覆盖 MySQL 优化的七大核心场景：
+共 **73 个精选案例**，覆盖 MySQL 优化的七大核心场景：
 
 ### 一、索引设计与失效（17 个）
 | # | 案例 | 难度 | 版本 |
@@ -111,7 +111,7 @@ type: ref    rows: 12    Extra: Using index
 | 60 | [STRAIGHT_JOIN 强制驱动顺序](docs/cases/join/60-straight-join.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 61 | [LEFT JOIN 改 INNER JOIN](docs/cases/join/61-left-join-to-inner.md) | ⭐⭐ | 5.7 & 8.0 |
 
-### 四、DDL 与大表（8 个）
+### 四、DDL 与大表（9 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 31 | [大表加索引 Online DDL](docs/cases/ddl/31-online-ddl.md) | ⭐⭐⭐ | 5.7 & 8.0 |
@@ -122,8 +122,9 @@ type: ref    rows: 12    Extra: Using index
 | 36 | [OPTIMIZE TABLE 碎片整理](docs/cases/ddl/36-optimize-table-fragmentation.md) | ⭐⭐ | 5.7 & 8.0 |
 | 62 | [大表加列 INSTANT（8.0）](docs/cases/ddl/62-instant-add-column.md) | ⭐⭐ | 8.0+ |
 | 63 | [修改字段类型锁表](docs/cases/ddl/63-modify-column-type.md) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 73 | [大字段垂直拆表](docs/cases/ddl/73-vertical-split-text.md) | ⭐⭐ | 5.7 & 8.0 |
 
-### 五、架构级优化（9 个）
+### 五、架构级优化（10 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 37 | [多条件动态筛选索引设计](docs/cases/architecture/37-dynamic-filter.md) | ⭐⭐⭐ | 5.7 & 8.0 |
@@ -135,6 +136,7 @@ type: ref    rows: 12    Extra: Using index
 | 43 | [软删除设计模式](docs/cases/architecture/43-soft-delete-pattern.md) | ⭐⭐ | 5.7 & 8.0 |
 | 64 | [分库分表路由策略](docs/cases/architecture/64-sharding-route.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 65 | [缓存穿透与布隆过滤器](docs/cases/architecture/65-cache-penetration.md) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 72 | [自增主键耗尽与分布式 ID](docs/cases/architecture/72-auto-inc-exhaustion.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 
 ### 六、事务与锁（9 个）
 | # | 案例 | 难度 | 版本 |
@@ -168,7 +170,7 @@ sql-lab/
 ├── docs/                  # VitePress 文档站
 │   ├── .vitepress/        # 配置 + 自定义组件
 │   ├── guide/             # 使用指南
-│   └── cases/             # 71 篇案例文档
+│   └── cases/             # 73 篇案例文档
 ├── sql/cases/             # 可运行 SQL（schema + seed + bad + good）
 ├── scripts/run-case.sh    # 一键运行案例
 ├── docker-compose.yml     # MySQL 5.7 + 8.0

@@ -87,6 +87,7 @@ const sidebar = {
         { text: '36 · OPTIMIZE TABLE 碎片整理', link: '/cases/ddl/36-optimize-table-fragmentation' },
         { text: '62 · 大表加列 INSTANT（8.0）', link: '/cases/ddl/62-instant-add-column' },
         { text: '63 · 修改字段类型锁表', link: '/cases/ddl/63-modify-column-type' },
+        { text: '73 · 大字段垂直拆表', link: '/cases/ddl/73-vertical-split-text' },
       ],
     },
     {
@@ -102,6 +103,7 @@ const sidebar = {
         { text: '43 · 软删除设计模式', link: '/cases/architecture/43-soft-delete-pattern' },
         { text: '64 · 分库分表路由策略', link: '/cases/architecture/64-sharding-route' },
         { text: '65 · 缓存穿透与布隆过滤器', link: '/cases/architecture/65-cache-penetration' },
+        { text: '72 · 自增主键耗尽与分布式 ID', link: '/cases/architecture/72-auto-inc-exhaustion' },
       ],
     },
     {
@@ -162,14 +164,14 @@ export default defineConfig({
     // Open Graph（社交分享卡片）
     ['meta', { property: 'og:site_name', content: 'SQL Lab' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'SQL Lab · 71 个能跑的 MySQL 优化实战案例' }],
-    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。71 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
+    ['meta', { property: 'og:title', content: 'SQL Lab · 73 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。73 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-lab/' }],
     ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
 
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'SQL Lab · 71 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { name: 'twitter:title', content: 'SQL Lab · 73 个能跑的 MySQL 优化实战案例' }],
     ['meta', { name: 'twitter:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
   ],

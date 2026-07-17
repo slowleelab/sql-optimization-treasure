@@ -6,7 +6,7 @@
 import { withBase } from 'vitepress'
 
 const stats = [
-  { number: '71', label: '精选案例' },
+  { number: '73', label: '精选案例' },
   { number: '7', label: '场景分类' },
   { number: '2', label: 'MySQL 版本' },
   { number: '100%', label: '可复现' },
@@ -16,8 +16,8 @@ const categories = [
   { icon: '🔑', name: '索引设计与失效', count: '17 个案例', link: withBase('/cases/indexing/01-deep-pagination') },
   { icon: '✏️', name: '查询改写', count: '11 个案例', link: withBase('/cases/query-rewrite/15-subquery-to-join') },
   { icon: '🔗', name: 'JOIN 优化', count: '9 个案例', link: withBase('/cases/join/24-small-drive-large') },
-  { icon: '🔨', name: 'DDL 与大表', count: '8 个案例', link: withBase('/cases/ddl/31-online-ddl') },
-  { icon: '🏗️', name: '架构级优化', count: '9 个案例', link: withBase('/cases/architecture/37-dynamic-filter') },
+  { icon: '🔨', name: 'DDL 与大表', count: '9 个案例', link: withBase('/cases/ddl/31-online-ddl') },
+  { icon: '🏗️', name: '架构级优化', count: '10 个案例', link: withBase('/cases/architecture/37-dynamic-filter') },
   { icon: '🔒', name: '事务与锁', count: '9 个案例', link: withBase('/cases/transaction/44-deadlock-analysis') },
   { icon: '⚡', name: '优化器与 8.0', count: '8 个案例', link: withBase('/cases/optimizer/51-descending-index') },
   { icon: '🚀', name: '全部案例', count: '查看总览', link: withBase('/cases/') },
@@ -35,7 +35,7 @@ const categories = [
 
   <!-- 分类导航 -->
   <div class="home-categories">
-    <h2 class="home-categories-title">七大场景 · 71 个案例</h2>
+    <h2 class="home-categories-title">七大场景 · 73 个案例</h2>
     <p class="home-categories-subtitle">从索引失效到事务锁、从查询改写到 8.0 新特性，覆盖 MySQL 优化全链路</p>
     <div class="home-category-grid">
       <a

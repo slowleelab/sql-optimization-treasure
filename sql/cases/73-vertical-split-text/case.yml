@@ -1,0 +1,9 @@
+title: 大字段垂直拆表
+category: ddl
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["TEXT", "BLOB", "垂直拆分", "冷热分离", "Buffer Pool"]
+description: |
+  文章表把正文 TEXT 和元数据混在同一张表，列表查询即使不查 TEXT，
+  InnoDB 页内仍存有 TEXT 指针，单页存放行数少、Buffer Pool 命中率低。
+  本案例演示将 TEXT 拆到扩展表后，主表每页容纳更多行，查询效率显著提升。
