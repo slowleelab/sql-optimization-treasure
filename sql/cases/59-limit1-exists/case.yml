@@ -1,0 +1,9 @@
+title: LIMIT 1 优化 EXISTS 子查询
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["EXISTS", "COUNT", "LIMIT 1", "子查询优化"]
+description: |
+  检查用户是否有未支付订单，用 COUNT(*) > 0 对每个用户都 COUNT 全部匹配行，
+  效率低下。改写为 EXISTS (SELECT 1 ... LIMIT 1)，找到第一行就返回，
+  避免全量 COUNT 计算。EXISTS 的短路特性配合 LIMIT 1 可大幅提升性能。

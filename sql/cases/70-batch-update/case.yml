@@ -1,0 +1,9 @@
+title: 大批量 UPDATE 分批优化
+category: optimizer
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["分批更新", "大批量UPDATE", "锁持有", "主从延迟"]
+description: |
+  需要更新 100 万行订单数据的状态，一次性 UPDATE 会锁定大量行，
+  导致锁持有时间过长、undo log 膨胀、主从延迟加剧。分批更新每次
+  只更新 1000 行，减少锁持有时间，避免主从延迟，控制 undo log 大小。

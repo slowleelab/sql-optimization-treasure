@@ -1,0 +1,10 @@
+title: 优化器 Hint 实战
+category: optimizer
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["USE INDEX", "FORCE INDEX", "IGNORE INDEX", "优化器选错索引"]
+description: |
+  订单表有 idx_status(status) 和 idx_user_created(user_id, created_at) 两个索引，
+  查询 WHERE user_id=100 AND status=1 ORDER BY created_at DESC LIMIT 10 时，
+  优化器可能误选 idx_status 导致 filesort。通过 USE INDEX / FORCE INDEX 强制
+  使用 idx_user_created，利用索引有序性避免 filesort，性能提升显著。

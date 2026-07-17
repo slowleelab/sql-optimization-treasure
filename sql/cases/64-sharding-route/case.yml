@@ -1,0 +1,10 @@
+title: 分库分表路由策略
+category: architecture
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["分库分表", "路由", "Sharding", "UNION ALL", "水平拆分"]
+description: |
+  订单表按 user_id 水平拆分为 4 个分片，查询时如果不知道数据在哪个分片，
+  只能 UNION ALL 扫描所有分片，性能随分片数线性下降。
+  通过路由计算（user_id % 4）精确定位目标分片，单次查询只访问一个分片。
+  本案例用 4 张表模拟 4 个分片，对比全分片扫描与精确路由的性能差异。

@@ -1,0 +1,10 @@
+title: 索引合并 Index Merge 陷阱
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["index_merge", "OR", "UNION改写"]
+description: |
+  用户表有 idx_status 和 idx_city 两个单列索引，查询 WHERE status=1 OR city='北京'
+  时 MySQL 选择 index_merge(union) 合并两个索引的结果集。当两个条件各自匹配大量
+  行时，index_merge 的合并开销反而比全表扫描还慢。改写为 UNION ALL 两个独立查询，
+  每个走自己的索引，避免 index_merge 的合并开销。

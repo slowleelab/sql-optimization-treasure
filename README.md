@@ -7,7 +7,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%20%7C%208.0-blue.svg)](https://www.mysql.com/)
 [![CI](https://github.com/slowleelab/sql-lab/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-lab/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Cases](https://img.shields.io/badge/cases-55-orange.svg)](docs/cases/)
+[![Cases](https://img.shields.io/badge/cases-70-orange.svg)](docs/cases/)
 
 📖 **在线文档**：[https://slowleelab.github.io/sql-lab/](https://slowleelab.github.io/sql-lab/)  
 🤖 **AI 对话**：接入 DeepWiki，可直接与仓库对话提问
@@ -60,9 +60,9 @@ type: ref    rows: 12    Extra: Using index
 
 ## 📚 案例总览
 
-共 **55 个精选案例**，覆盖 MySQL 优化的七大核心场景：
+共 **70 个精选案例**，覆盖 MySQL 优化的七大核心场景：
 
-### 一、索引设计与失效（14 个）
+### 一、索引设计与失效（16 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 01 | [深度分页 LIMIT 大偏移](docs/cases/indexing/01-deep-pagination.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -79,8 +79,10 @@ type: ref    rows: 12    Extra: Using index
 | 12 | [索引选择性评估](docs/cases/indexing/12-index-selectivity.md) | ⭐⭐ | 5.7 & 8.0 |
 | 13 | [不可见索引（8.0）](docs/cases/indexing/13-invisible-index.md) | ⭐⭐ | 8.0+ |
 | 14 | [自增主键跳跃与性能](docs/cases/indexing/14-auto-increment-gap.md) | ⭐⭐ | 5.7 & 8.0 |
+| 56 | [索引合并 Index Merge 陷阱](docs/cases/indexing/56-index-merge-pitfall.md) | ⭐⭐ | 5.7 & 8.0 |
+| 57 | [索引跳跃扫描 Skip Scan](docs/cases/indexing/57-skip-scan.md) | ⭐⭐ | 8.0+ |
 
-### 二、查询改写（9 个）
+### 二、查询改写（11 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 15 | [子查询改写为 JOIN](docs/cases/query-rewrite/15-subquery-to-join.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -92,8 +94,10 @@ type: ref    rows: 12    Extra: Using index
 | 21 | [NOT IN vs LEFT JOIN IS NULL](docs/cases/query-rewrite/21-not-in-vs-left-join.md) | ⭐⭐ | 5.7 & 8.0 |
 | 22 | [UNION vs UNION ALL](docs/cases/query-rewrite/22-union-vs-union-all.md) | ⭐ | 5.7 & 8.0 |
 | 23 | [ORDER BY LIMIT 无索引优化](docs/cases/query-rewrite/23-orderby-limit-no-index.md) | ⭐⭐ | 5.7 & 8.0 |
+| 58 | [HAVING 改 WHERE 提前过滤](docs/cases/query-rewrite/58-having-to-where.md) | ⭐ | 5.7 & 8.0 |
+| 59 | [LIMIT 1 优化 EXISTS](docs/cases/query-rewrite/59-limit1-exists.md) | ⭐⭐ | 5.7 & 8.0 |
 
-### 三、JOIN 优化（7 个）
+### 三、JOIN 优化（9 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 24 | [小表驱动大表](docs/cases/join/24-small-drive-large.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -103,8 +107,10 @@ type: ref    rows: 12    Extra: Using index
 | 28 | [自连接查询优化](docs/cases/join/28-self-join-optimization.md) | ⭐⭐ | 5.7 & 8.0 |
 | 29 | [JOIN + GROUP BY 聚合优化](docs/cases/join/29-join-group-by-optimization.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 30 | [派生表物化优化](docs/cases/join/30-derived-table-materialization.md) | ⭐⭐ | 5.7 & 8.0 |
+| 60 | [STRAIGHT_JOIN 强制驱动顺序](docs/cases/join/60-straight-join.md) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 61 | [LEFT JOIN 改 INNER JOIN](docs/cases/join/61-left-join-to-inner.md) | ⭐⭐ | 5.7 & 8.0 |
 
-### 四、DDL 与大表（6 个）
+### 四、DDL 与大表（8 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 31 | [大表加索引 Online DDL](docs/cases/ddl/31-online-ddl.md) | ⭐⭐⭐ | 5.7 & 8.0 |
@@ -113,8 +119,10 @@ type: ref    rows: 12    Extra: Using index
 | 34 | [分区表 RANGE 分区优化](docs/cases/ddl/34-partition-range.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 35 | [大表批量 INSERT 优化](docs/cases/ddl/35-batch-insert-optimization.md) | ⭐⭐ | 5.7 & 8.0 |
 | 36 | [OPTIMIZE TABLE 碎片整理](docs/cases/ddl/36-optimize-table-fragmentation.md) | ⭐⭐ | 5.7 & 8.0 |
+| 62 | [大表加列 INSTANT（8.0）](docs/cases/ddl/62-instant-add-column.md) | ⭐⭐ | 8.0+ |
+| 63 | [修改字段类型锁表](docs/cases/ddl/63-modify-column-type.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-### 五、架构级优化（7 个）
+### 五、架构级优化（9 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 37 | [多条件动态筛选索引设计](docs/cases/architecture/37-dynamic-filter.md) | ⭐⭐⭐ | 5.7 & 8.0 |
@@ -124,8 +132,10 @@ type: ref    rows: 12    Extra: Using index
 | 41 | [读写分离架构](docs/cases/architecture/41-read-write-splitting.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 42 | [JSON 字段使用模式](docs/cases/architecture/42-json-column-pattern.md) | ⭐⭐ | 8.0+ |
 | 43 | [软删除设计模式](docs/cases/architecture/43-soft-delete-pattern.md) | ⭐⭐ | 5.7 & 8.0 |
+| 64 | [分库分表路由策略](docs/cases/architecture/64-sharding-route.md) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 65 | [缓存穿透与布隆过滤器](docs/cases/architecture/65-cache-penetration.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-### 六、事务与锁（7 个）
+### 六、事务与锁（9 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 44 | [死锁排查与分析](docs/cases/transaction/44-deadlock-analysis.md) | ⭐⭐⭐ | 5.7 & 8.0 |
@@ -135,8 +145,10 @@ type: ref    rows: 12    Extra: Using index
 | 48 | [幻读问题与解决](docs/cases/transaction/48-phantom-read.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 49 | [死锁重试与超时处理](docs/cases/transaction/49-deadlock-retry-timeout.md) | ⭐⭐ | 5.7 & 8.0 |
 | 50 | [唯一索引并发插入冲突](docs/cases/transaction/50-unique-index-concurrent-insert.md) | ⭐⭐ | 5.7 & 8.0 |
+| 66 | [长事务危害](docs/cases/transaction/66-long-transaction-harm.md) | ⭐⭐ | 5.7 & 8.0 |
+| 67 | [RC vs RR 隔离级别](docs/cases/transaction/67-rc-vs-rr-isolation.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-### 七、优化器与 8.0 新特性（5 个）
+### 七、优化器与 8.0 新特性（8 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 51 | [降序索引消除 filesort](docs/cases/optimizer/51-descending-index.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -144,6 +156,9 @@ type: ref    rows: 12    Extra: Using index
 | 53 | [直方图统计优化](docs/cases/optimizer/53-histogram-statistics.md) | ⭐⭐⭐ | 8.0+ |
 | 54 | [CTE 递归查询优化](docs/cases/optimizer/54-cte-recursive.md) | ⭐⭐ | 8.0+ |
 | 55 | [窗口函数替代自连接](docs/cases/optimizer/55-window-function.md) | ⭐⭐ | 8.0+ |
+| 68 | [优化器 Hint 实战](docs/cases/optimizer/68-optimizer-hint.md) | ⭐⭐ | 5.7 & 8.0 |
+| 69 | [派生条件下推（8.0）](docs/cases/optimizer/69-derived-condition-pushdown.md) | ⭐⭐⭐ | 8.0+ |
+| 70 | [大批量 UPDATE 分批优化](docs/cases/optimizer/70-batch-update.md) | ⭐⭐ | 5.7 & 8.0 |
 
 ## 🛠️ 项目结构
 
@@ -152,7 +167,7 @@ sql-lab/
 ├── docs/                  # VitePress 文档站
 │   ├── .vitepress/        # 配置 + 自定义组件
 │   ├── guide/             # 使用指南
-│   └── cases/             # 55 篇案例文档
+│   └── cases/             # 70 篇案例文档
 ├── sql/cases/             # 可运行 SQL（schema + seed + bad + good）
 ├── scripts/run-case.sh    # 一键运行案例
 ├── docker-compose.yml     # MySQL 5.7 + 8.0

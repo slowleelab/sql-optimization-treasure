@@ -1,0 +1,9 @@
+title: 长事务危害
+category: transaction
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["长事务", "锁持有", "undo log", "外部调用"]
+description: |
+  事务中先 SELECT FOR UPDATE 加锁，再执行耗时操作（如调用外部支付接口），
+  最后 UPDATE 提交。锁持有时间长达数秒甚至数十秒，导致并发事务大量阻塞，
+  undo log 膨胀，主从延迟加剧。将耗时操作移到事务外，缩短事务边界可解决。

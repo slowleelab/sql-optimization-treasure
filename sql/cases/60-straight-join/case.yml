@@ -1,0 +1,10 @@
+title: STRAIGHT_JOIN 强制驱动顺序
+category: join
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["STRAIGHT_JOIN", "JOIN顺序", "驱动表", "中间结果集"]
+description: |
+  三表 JOIN 时，优化器选错了驱动表，先 JOIN order_item 和 product
+  产生大量中间结果，导致性能骤降。用 STRAIGHT_JOIN 强制从 t_order
+  开始，先过滤 user_id，让每步 JOIN 都用小结果集驱动，显著减少
+  扫描行数和中间结果集规模。

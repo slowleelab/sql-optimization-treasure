@@ -1,0 +1,10 @@
+title: 大表加列默认值 INSTANT 秒级完成
+category: ddl
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["INSTANT", "ADD COLUMN", "Online DDL", "元数据变更", "锁表"]
+description: |
+  生产环境 500 万行大表需要加一个有默认值的新列。MySQL 5.7 中
+  ALTER TABLE ADD COLUMN 需要重建整张表，逐行拷贝数据，锁表数十分钟。
+  MySQL 8.0 引入 ALGORITHM=INSTANT，加列操作只修改元数据，
+  不拷贝数据，秒级完成。本案例对比两种方式的执行效率差异。

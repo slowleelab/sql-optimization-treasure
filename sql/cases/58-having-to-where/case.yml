@@ -1,0 +1,9 @@
+title: HAVING 改 WHERE 提前过滤
+category: query-rewrite
+difficulty: 1
+versions: ["5.7", "8.0"]
+tags: ["HAVING", "WHERE", "GROUP BY", "提前过滤"]
+description: |
+  订单统计查询先 GROUP BY 再 HAVING 过滤，导致分组了 100 万行才过滤。
+  将 status 条件从 HAVING 提前到 WHERE，只分组 25 万行，大幅减少分组
+  和聚合的计算量。HAVING 中的非聚合条件应尽量提前到 WHERE 中。

@@ -1,8 +1,8 @@
 # 案例总览
 
-共 **55 个精选案例**，覆盖 MySQL 优化的七大核心场景。每个案例都带真实数据，可一键复现。
+共 **70 个精选案例**，覆盖 MySQL 优化的七大核心场景。每个案例都带真实数据，可一键复现。
 
-## 一、索引设计与失效（14 个）
+## 一、索引设计与失效（16 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -20,8 +20,10 @@
 | 12 | [索引选择性评估](./indexing/12-index-selectivity) | ⭐⭐ | 5.7 & 8.0 |
 | 13 | [不可见索引（8.0）](./indexing/13-invisible-index) | ⭐⭐ | 8.0+ |
 | 14 | [自增主键跳跃与性能](./indexing/14-auto-increment-gap) | ⭐⭐ | 5.7 & 8.0 |
+| 56 | [索引合并 Index Merge 陷阱](./indexing/56-index-merge-pitfall) | ⭐⭐ | 5.7 & 8.0 |
+| 57 | [索引跳跃扫描 Skip Scan](./indexing/57-skip-scan) | ⭐⭐ | 8.0+ |
 
-## 二、查询改写（9 个）
+## 二、查询改写（11 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -34,8 +36,10 @@
 | 21 | [NOT IN vs LEFT JOIN IS NULL](./query-rewrite/21-not-in-vs-left-join) | ⭐⭐ | 5.7 & 8.0 |
 | 22 | [UNION vs UNION ALL](./query-rewrite/22-union-vs-union-all) | ⭐ | 5.7 & 8.0 |
 | 23 | [ORDER BY LIMIT 无索引优化](./query-rewrite/23-orderby-limit-no-index) | ⭐⭐ | 5.7 & 8.0 |
+| 58 | [HAVING 改 WHERE 提前过滤](./query-rewrite/58-having-to-where) | ⭐ | 5.7 & 8.0 |
+| 59 | [LIMIT 1 优化 EXISTS](./query-rewrite/59-limit1-exists) | ⭐⭐ | 5.7 & 8.0 |
 
-## 三、JOIN 优化（7 个）
+## 三、JOIN 优化（9 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -46,8 +50,10 @@
 | 28 | [自连接查询优化](./join/28-self-join-optimization) | ⭐⭐ | 5.7 & 8.0 |
 | 29 | [JOIN + GROUP BY 聚合优化](./join/29-join-group-by-optimization) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 30 | [派生表物化优化](./join/30-derived-table-materialization) | ⭐⭐ | 5.7 & 8.0 |
+| 60 | [STRAIGHT_JOIN 强制驱动顺序](./join/60-straight-join) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 61 | [LEFT JOIN 改 INNER JOIN](./join/61-left-join-to-inner) | ⭐⭐ | 5.7 & 8.0 |
 
-## 四、DDL 与大表（6 个）
+## 四、DDL 与大表（8 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -57,8 +63,10 @@
 | 34 | [分区表 RANGE 分区优化](./ddl/34-partition-range) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 35 | [大表批量 INSERT 优化](./ddl/35-batch-insert-optimization) | ⭐⭐ | 5.7 & 8.0 |
 | 36 | [OPTIMIZE TABLE 碎片整理](./ddl/36-optimize-table-fragmentation) | ⭐⭐ | 5.7 & 8.0 |
+| 62 | [大表加列 INSTANT（8.0）](./ddl/62-instant-add-column) | ⭐⭐ | 8.0+ |
+| 63 | [修改字段类型锁表](./ddl/63-modify-column-type) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-## 五、架构级优化（7 个）
+## 五、架构级优化（9 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -69,8 +77,10 @@
 | 41 | [读写分离架构](./architecture/41-read-write-splitting) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 42 | [JSON 字段使用模式](./architecture/42-json-column-pattern) | ⭐⭐ | 8.0+ |
 | 43 | [软删除设计模式](./architecture/43-soft-delete-pattern) | ⭐⭐ | 5.7 & 8.0 |
+| 64 | [分库分表路由策略](./architecture/64-sharding-route) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 65 | [缓存穿透与布隆过滤器](./architecture/65-cache-penetration) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-## 六、事务与锁（7 个）
+## 六、事务与锁（9 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -81,8 +91,10 @@
 | 48 | [幻读问题与解决](./transaction/48-phantom-read) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 49 | [死锁重试与超时处理](./transaction/49-deadlock-retry-timeout) | ⭐⭐ | 5.7 & 8.0 |
 | 50 | [唯一索引并发插入冲突](./transaction/50-unique-index-concurrent-insert) | ⭐⭐ | 5.7 & 8.0 |
+| 66 | [长事务危害](./transaction/66-long-transaction-harm) | ⭐⭐ | 5.7 & 8.0 |
+| 67 | [RC vs RR 隔离级别](./transaction/67-rc-vs-rr-isolation) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-## 七、优化器与 8.0 新特性（5 个）
+## 七、优化器与 8.0 新特性（8 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -91,6 +103,9 @@
 | 53 | [直方图统计优化](./optimizer/53-histogram-statistics) | ⭐⭐⭐ | 8.0+ |
 | 54 | [CTE 递归查询优化](./optimizer/54-cte-recursive) | ⭐⭐ | 8.0+ |
 | 55 | [窗口函数替代自连接](./optimizer/55-window-function) | ⭐⭐ | 8.0+ |
+| 68 | [优化器 Hint 实战](./optimizer/68-optimizer-hint) | ⭐⭐ | 5.7 & 8.0 |
+| 69 | [派生条件下推（8.0）](./optimizer/69-derived-condition-pushdown) | ⭐⭐⭐ | 8.0+ |
+| 70 | [大批量 UPDATE 分批优化](./optimizer/70-batch-update) | ⭐⭐ | 5.7 & 8.0 |
 
 ---
 

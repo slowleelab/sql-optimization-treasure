@@ -1,0 +1,10 @@
+title: 修改字段类型的锁行为差异
+category: ddl
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["MODIFY COLUMN", "Online DDL", "ALGORITHM", "LOCK", "锁表"]
+description: |
+  生产环境需要将用户表 phone 字段从 VARCHAR(50) 改为 VARCHAR(20)，
+  或将 INT 改为 BIGINT。不同的 ALTER 方式（COPY / INPLACE / 指定 LOCK 级别）
+  对业务的影响差异巨大。本案例对比不同 DDL 策略的锁行为，
+  展示如何选择最优的修改列类型方案。

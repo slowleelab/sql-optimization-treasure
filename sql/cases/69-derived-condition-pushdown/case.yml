@@ -1,0 +1,10 @@
+title: 派生条件下推优化
+category: optimizer
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["派生表", "条件下推", "8.0优化", "物化"]
+description: |
+  FROM 子查询（派生表）中的 GROUP BY 在 5.7 中会被完整物化为临时表，
+  外层 WHERE 条件无法下推到子查询内部，导致全量分组后再过滤。
+  8.0 优化器支持派生条件下推（derived condition pushdown），
+  将外层条件下推到派生表内部，只分组需要的数据，大幅减少物化行数。

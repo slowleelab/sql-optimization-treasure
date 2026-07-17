@@ -1,0 +1,3 @@
+-- setup-good.sql: 切换到 READ COMMITTED 隔离级别
+-- RC 隔离级别下，FOR UPDATE 只加记录锁，不加间隙锁，避免阻塞并发插入
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;

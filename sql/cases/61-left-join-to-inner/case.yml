@@ -1,0 +1,11 @@
+title: LEFT JOIN 改 INNER JOIN 释放优化器
+category: join
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["LEFT JOIN", "INNER JOIN", "驱动表", "优化器", "JOIN 顺序"]
+description: |
+  查询已支付订单及其用户信息时，业务上已支付订单一定存在对应用户，
+  但 SQL 写成了 LEFT JOIN。LEFT JOIN 语义要求保留左表全部行，
+  优化器无法自由重排 JOIN 顺序，被迫以订单大表为驱动表。
+  本案例演示将 LEFT JOIN 改为 INNER JOIN 后，优化器可自由选择
+  过滤性更好的表作为驱动表，显著减少外层循环次数。

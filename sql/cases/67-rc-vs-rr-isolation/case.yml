@@ -1,0 +1,9 @@
+title: RC vs RR 隔离级别锁行为差异
+category: transaction
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["隔离级别", "next-key lock", "gap lock", "并发插入"]
+description: |
+  RR（可重复读）隔离级别下，范围查询 FOR UPDATE 会加 next-key lock（记录锁+间隙锁），
+  锁定整个索引区间，阻塞其他事务向该区间插入新数据。RC（读已提交）隔离级别下
+  只加记录锁，不锁间隙，并发插入不被阻塞。本案例对比两种隔离级别的锁行为差异。

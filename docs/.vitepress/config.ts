@@ -38,6 +38,8 @@ const sidebar = {
         { text: '12 · 索引选择性评估', link: '/cases/indexing/12-index-selectivity' },
         { text: '13 · 不可见索引（8.0）', link: '/cases/indexing/13-invisible-index' },
         { text: '14 · 自增主键跳跃与性能', link: '/cases/indexing/14-auto-increment-gap' },
+        { text: '56 · 索引合并 Index Merge 陷阱', link: '/cases/indexing/56-index-merge-pitfall' },
+        { text: '57 · 索引跳跃扫描 Skip Scan', link: '/cases/indexing/57-skip-scan' },
       ],
     },
     {
@@ -53,6 +55,8 @@ const sidebar = {
         { text: '21 · NOT IN vs LEFT JOIN IS NULL', link: '/cases/query-rewrite/21-not-in-vs-left-join' },
         { text: '22 · UNION vs UNION ALL', link: '/cases/query-rewrite/22-union-vs-union-all' },
         { text: '23 · ORDER BY LIMIT 无索引优化', link: '/cases/query-rewrite/23-orderby-limit-no-index' },
+        { text: '58 · HAVING 改 WHERE 提前过滤', link: '/cases/query-rewrite/58-having-to-where' },
+        { text: '59 · LIMIT 1 优化 EXISTS', link: '/cases/query-rewrite/59-limit1-exists' },
       ],
     },
     {
@@ -66,6 +70,8 @@ const sidebar = {
         { text: '28 · 自连接查询优化', link: '/cases/join/28-self-join-optimization' },
         { text: '29 · JOIN + GROUP BY 聚合优化', link: '/cases/join/29-join-group-by-optimization' },
         { text: '30 · 派生表物化优化', link: '/cases/join/30-derived-table-materialization' },
+        { text: '60 · STRAIGHT_JOIN 强制驱动顺序', link: '/cases/join/60-straight-join' },
+        { text: '61 · LEFT JOIN 改 INNER JOIN', link: '/cases/join/61-left-join-to-inner' },
       ],
     },
     {
@@ -78,6 +84,8 @@ const sidebar = {
         { text: '34 · 分区表 RANGE 分区优化', link: '/cases/ddl/34-partition-range' },
         { text: '35 · 大表批量 INSERT 优化', link: '/cases/ddl/35-batch-insert-optimization' },
         { text: '36 · OPTIMIZE TABLE 碎片整理', link: '/cases/ddl/36-optimize-table-fragmentation' },
+        { text: '62 · 大表加列 INSTANT（8.0）', link: '/cases/ddl/62-instant-add-column' },
+        { text: '63 · 修改字段类型锁表', link: '/cases/ddl/63-modify-column-type' },
       ],
     },
     {
@@ -91,6 +99,8 @@ const sidebar = {
         { text: '41 · 读写分离架构', link: '/cases/architecture/41-read-write-splitting' },
         { text: '42 · JSON 字段使用模式', link: '/cases/architecture/42-json-column-pattern' },
         { text: '43 · 软删除设计模式', link: '/cases/architecture/43-soft-delete-pattern' },
+        { text: '64 · 分库分表路由策略', link: '/cases/architecture/64-sharding-route' },
+        { text: '65 · 缓存穿透与布隆过滤器', link: '/cases/architecture/65-cache-penetration' },
       ],
     },
     {
@@ -104,6 +114,8 @@ const sidebar = {
         { text: '48 · 幻读问题与解决', link: '/cases/transaction/48-phantom-read' },
         { text: '49 · 死锁重试与超时处理', link: '/cases/transaction/49-deadlock-retry-timeout' },
         { text: '50 · 唯一索引并发插入冲突', link: '/cases/transaction/50-unique-index-concurrent-insert' },
+        { text: '66 · 长事务危害', link: '/cases/transaction/66-long-transaction-harm' },
+        { text: '67 · RC vs RR 隔离级别', link: '/cases/transaction/67-rc-vs-rr-isolation' },
       ],
     },
     {
@@ -115,6 +127,9 @@ const sidebar = {
         { text: '53 · 直方图统计优化', link: '/cases/optimizer/53-histogram-statistics' },
         { text: '54 · CTE 递归查询优化', link: '/cases/optimizer/54-cte-recursive' },
         { text: '55 · 窗口函数替代自连接', link: '/cases/optimizer/55-window-function' },
+        { text: '68 · 优化器 Hint 实战', link: '/cases/optimizer/68-optimizer-hint' },
+        { text: '69 · 派生条件下推（8.0）', link: '/cases/optimizer/69-derived-condition-pushdown' },
+        { text: '70 · 大批量 UPDATE 分批优化', link: '/cases/optimizer/70-batch-update' },
       ],
     },
   ],
@@ -146,14 +161,14 @@ export default defineConfig({
     // Open Graph（社交分享卡片）
     ['meta', { property: 'og:site_name', content: 'SQL Lab' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'SQL Lab · 55 个能跑的 MySQL 优化实战案例' }],
-    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。55 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
+    ['meta', { property: 'og:title', content: 'SQL Lab · 70 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。70 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-lab/' }],
     ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
 
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'SQL Lab · 55 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { name: 'twitter:title', content: 'SQL Lab · 70 个能跑的 MySQL 优化实战案例' }],
     ['meta', { name: 'twitter:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
   ],
