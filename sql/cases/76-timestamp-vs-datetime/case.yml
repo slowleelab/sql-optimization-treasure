@@ -1,0 +1,9 @@
+title: 时区与 TIMESTAMP vs DATETIME
+category: query-rewrite
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["TIMESTAMP", "DATETIME", "时区", "time_zone", "数据类型"]
+description: |
+  跨时区业务中，TIMESTAMP 存 UTC 自动转换导致报表数据错位 8 小时。
+  本案例演示 TIMESTAMP 和 DATETIME 的存储差异、时区转换机制、
+  以及跨时区业务的时间字段选型最佳实践。

@@ -1,0 +1,9 @@
+title: 全文索引 FULLTEXT 替代 LIKE
+category: indexing
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["FULLTEXT", "ngram", "全文检索", "LIKE", "中文搜索"]
+description: |
+  内容搜索用 LIKE '%关键词%' 导致全表扫描，百万数据查询耗时数秒。
+  本案例演示 MySQL FULLTEXT 索引 + ngram 分词器实现中文全文检索，
+  将搜索从全表扫描 O(n) 降为倒排索引查找 O(1)。

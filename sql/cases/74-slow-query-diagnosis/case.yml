@@ -1,0 +1,10 @@
+title: 慢查询排查方法论
+category: optimizer
+difficulty: 3
+versions: ["5.7", "8.0"]
+tags: ["慢查询", "slow log", "pt-query-digest", "performance_schema", "方法论"]
+description: |
+  生产数据库 CPU 飙升到 90%，但不知道是哪条 SQL 导致的。
+  本案例演示完整的慢查询排查链路：开启 slow log -> pt-query-digest 聚合指纹
+  -> performance_schema 定位 TOP SQL -> EXPLAIN ANALYZE 验证。
+  这是所有 DBA 优化的"第 0 步"：先找到该优化什么，再谈怎么优化。

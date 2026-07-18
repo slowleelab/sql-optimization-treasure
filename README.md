@@ -7,7 +7,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%20%7C%208.0-blue.svg)](https://www.mysql.com/)
 [![CI](https://github.com/slowleelab/sql-lab/actions/workflows/validate-sql.yml/badge.svg)](https://github.com/slowleelab/sql-lab/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Cases](https://img.shields.io/badge/cases-73-orange.svg)](docs/cases/)
+[![Cases](https://img.shields.io/badge/cases-77-orange.svg)](docs/cases/)
 
 📖 **在线文档**：[https://slowleelab.github.io/sql-lab/](https://slowleelab.github.io/sql-lab/)  
 🤖 **AI 对话**：接入 DeepWiki，可直接与仓库对话提问
@@ -60,9 +60,9 @@ type: ref    rows: 12    Extra: Using index
 
 ## 📚 案例总览
 
-共 **73 个精选案例**，覆盖 MySQL 优化的七大核心场景：
+共 **77 个精选案例**，覆盖 MySQL 优化的七大核心场景：
 
-### 一、索引设计与失效（17 个）
+### 一、索引设计与失效（18 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 01 | [深度分页 LIMIT 大偏移](docs/cases/indexing/01-deep-pagination.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -82,8 +82,9 @@ type: ref    rows: 12    Extra: Using index
 | 56 | [索引合并 Index Merge 陷阱](docs/cases/indexing/56-index-merge-pitfall.md) | ⭐⭐ | 5.7 & 8.0 |
 | 57 | [索引跳跃扫描 Skip Scan](docs/cases/indexing/57-skip-scan.md) | ⭐⭐ | 8.0+ |
 | 71 | [游标分页替代深分页](docs/cases/indexing/71-cursor-pagination.md) | ⭐⭐ | 5.7 & 8.0 |
+| 77 | [全文索引 FULLTEXT 替代 LIKE](docs/cases/indexing/77-fulltext-search.md) | ⭐⭐ | 5.7 & 8.0 |
 
-### 二、查询改写（11 个）
+### 二、查询改写（12 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 15 | [子查询改写为 JOIN](docs/cases/query-rewrite/15-subquery-to-join.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -97,6 +98,7 @@ type: ref    rows: 12    Extra: Using index
 | 23 | [ORDER BY LIMIT 无索引优化](docs/cases/query-rewrite/23-orderby-limit-no-index.md) | ⭐⭐ | 5.7 & 8.0 |
 | 58 | [HAVING 改 WHERE 提前过滤](docs/cases/query-rewrite/58-having-to-where.md) | ⭐ | 5.7 & 8.0 |
 | 59 | [LIMIT 1 优化 EXISTS](docs/cases/query-rewrite/59-limit1-exists.md) | ⭐⭐ | 5.7 & 8.0 |
+| 76 | [时区与 TIMESTAMP vs DATETIME](docs/cases/query-rewrite/76-timestamp-vs-datetime.md) | ⭐⭐ | 5.7 & 8.0 |
 
 ### 三、JOIN 优化（9 个）
 | # | 案例 | 难度 | 版本 |
@@ -124,7 +126,7 @@ type: ref    rows: 12    Extra: Using index
 | 63 | [修改字段类型锁表](docs/cases/ddl/63-modify-column-type.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 73 | [大字段垂直拆表](docs/cases/ddl/73-vertical-split-text.md) | ⭐⭐ | 5.7 & 8.0 |
 
-### 五、架构级优化（10 个）
+### 五、架构级优化（11 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 37 | [多条件动态筛选索引设计](docs/cases/architecture/37-dynamic-filter.md) | ⭐⭐⭐ | 5.7 & 8.0 |
@@ -137,6 +139,7 @@ type: ref    rows: 12    Extra: Using index
 | 64 | [分库分表路由策略](docs/cases/architecture/64-sharding-route.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 65 | [缓存穿透与布隆过滤器](docs/cases/architecture/65-cache-penetration.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 72 | [自增主键耗尽与分布式 ID](docs/cases/architecture/72-auto-inc-exhaustion.md) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 75 | [连接池与 max_connections 耗尽诊断](docs/cases/architecture/75-connection-pool-exhaustion.md) | ⭐⭐ | 5.7 & 8.0 |
 
 ### 六、事务与锁（9 个）
 | # | 案例 | 难度 | 版本 |
@@ -151,7 +154,7 @@ type: ref    rows: 12    Extra: Using index
 | 66 | [长事务危害](docs/cases/transaction/66-long-transaction-harm.md) | ⭐⭐ | 5.7 & 8.0 |
 | 67 | [RC vs RR 隔离级别](docs/cases/transaction/67-rc-vs-rr-isolation.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-### 七、优化器与 8.0 新特性（8 个）
+### 七、优化器与 8.0 新特性（9 个）
 | # | 案例 | 难度 | 版本 |
 |---|------|------|------|
 | 51 | [降序索引消除 filesort](docs/cases/optimizer/51-descending-index.md) | ⭐⭐ | 5.7 & 8.0 |
@@ -162,6 +165,7 @@ type: ref    rows: 12    Extra: Using index
 | 68 | [优化器 Hint 实战](docs/cases/optimizer/68-optimizer-hint.md) | ⭐⭐ | 5.7 & 8.0 |
 | 69 | [派生条件下推（8.0）](docs/cases/optimizer/69-derived-condition-pushdown.md) | ⭐⭐⭐ | 8.0+ |
 | 70 | [大批量 UPDATE 分批优化](docs/cases/optimizer/70-batch-update.md) | ⭐⭐ | 5.7 & 8.0 |
+| 74 | [慢查询排查方法论](docs/cases/optimizer/74-slow-query-diagnosis.md) | ⭐⭐⭐ | 5.7 & 8.0 |
 
 ## 🛠️ 项目结构
 
@@ -170,7 +174,7 @@ sql-lab/
 ├── docs/                  # VitePress 文档站
 │   ├── .vitepress/        # 配置 + 自定义组件
 │   ├── guide/             # 使用指南
-│   └── cases/             # 73 篇案例文档
+│   └── cases/             # 77 篇案例文档
 ├── sql/cases/             # 可运行 SQL（schema + seed + bad + good）
 ├── scripts/run-case.sh    # 一键运行案例
 ├── docker-compose.yml     # MySQL 5.7 + 8.0

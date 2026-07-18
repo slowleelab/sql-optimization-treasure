@@ -1,8 +1,8 @@
 # 案例总览
 
-共 **73 个精选案例**，覆盖 MySQL 优化的七大核心场景。每个案例都带真实数据，可一键复现。
+共 **77 个精选案例**，覆盖 MySQL 优化的七大核心场景。每个案例都带真实数据，可一键复现。
 
-## 一、索引设计与失效（17 个）
+## 一、索引设计与失效（18 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -23,8 +23,9 @@
 | 56 | [索引合并 Index Merge 陷阱](./indexing/56-index-merge-pitfall) | ⭐⭐ | 5.7 & 8.0 |
 | 57 | [索引跳跃扫描 Skip Scan](./indexing/57-skip-scan) | ⭐⭐ | 8.0+ |
 | 71 | [游标分页替代深分页](./indexing/71-cursor-pagination) | ⭐⭐ | 5.7 & 8.0 |
+| 77 | [全文索引 FULLTEXT 替代 LIKE](./indexing/77-fulltext-search) | ⭐⭐ | 5.7 & 8.0 |
 
-## 二、查询改写（11 个）
+## 二、查询改写（12 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -39,6 +40,7 @@
 | 23 | [ORDER BY LIMIT 无索引优化](./query-rewrite/23-orderby-limit-no-index) | ⭐⭐ | 5.7 & 8.0 |
 | 58 | [HAVING 改 WHERE 提前过滤](./query-rewrite/58-having-to-where) | ⭐ | 5.7 & 8.0 |
 | 59 | [LIMIT 1 优化 EXISTS](./query-rewrite/59-limit1-exists) | ⭐⭐ | 5.7 & 8.0 |
+| 76 | [时区与 TIMESTAMP vs DATETIME](./query-rewrite/76-timestamp-vs-datetime) | ⭐⭐ | 5.7 & 8.0 |
 
 ## 三、JOIN 优化（9 个）
 
@@ -68,7 +70,7 @@
 | 63 | [修改字段类型锁表](./ddl/63-modify-column-type) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 73 | [大字段垂直拆表](./ddl/73-vertical-split-text) | ⭐⭐ | 5.7 & 8.0 |
 
-## 五、架构级优化（10 个）
+## 五、架构级优化（11 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -82,6 +84,7 @@
 | 64 | [分库分表路由策略](./architecture/64-sharding-route) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 65 | [缓存穿透与布隆过滤器](./architecture/65-cache-penetration) | ⭐⭐⭐ | 5.7 & 8.0 |
 | 72 | [自增主键耗尽与分布式 ID](./architecture/72-auto-inc-exhaustion) | ⭐⭐⭐ | 5.7 & 8.0 |
+| 75 | [连接池与 max_connections 耗尽诊断](./architecture/75-connection-pool-exhaustion) | ⭐⭐ | 5.7 & 8.0 |
 
 ## 六、事务与锁（9 个）
 
@@ -97,7 +100,7 @@
 | 66 | [长事务危害](./transaction/66-long-transaction-harm) | ⭐⭐ | 5.7 & 8.0 |
 | 67 | [RC vs RR 隔离级别](./transaction/67-rc-vs-rr-isolation) | ⭐⭐⭐ | 5.7 & 8.0 |
 
-## 七、优化器与 8.0 新特性（8 个）
+## 七、优化器与 8.0 新特性（9 个）
 
 | # | 案例 | 难度 | 版本 |
 |---|------|:----:|:----:|
@@ -109,6 +112,7 @@
 | 68 | [优化器 Hint 实战](./optimizer/68-optimizer-hint) | ⭐⭐ | 5.7 & 8.0 |
 | 69 | [派生条件下推（8.0）](./optimizer/69-derived-condition-pushdown) | ⭐⭐⭐ | 8.0+ |
 | 70 | [大批量 UPDATE 分批优化](./optimizer/70-batch-update) | ⭐⭐ | 5.7 & 8.0 |
+| 74 | [慢查询排查方法论](./optimizer/74-slow-query-diagnosis) | ⭐⭐⭐ | 5.7 & 8.0 |
 
 ---
 

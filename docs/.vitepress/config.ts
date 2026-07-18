@@ -41,6 +41,7 @@ const sidebar = {
         { text: '56 · 索引合并 Index Merge 陷阱', link: '/cases/indexing/56-index-merge-pitfall' },
         { text: '57 · 索引跳跃扫描 Skip Scan', link: '/cases/indexing/57-skip-scan' },
         { text: '71 · 游标分页替代深分页', link: '/cases/indexing/71-cursor-pagination' },
+        { text: '77 · 全文索引 FULLTEXT 替代 LIKE', link: '/cases/indexing/77-fulltext-search' },
       ],
     },
     {
@@ -58,6 +59,7 @@ const sidebar = {
         { text: '23 · ORDER BY LIMIT 无索引优化', link: '/cases/query-rewrite/23-orderby-limit-no-index' },
         { text: '58 · HAVING 改 WHERE 提前过滤', link: '/cases/query-rewrite/58-having-to-where' },
         { text: '59 · LIMIT 1 优化 EXISTS', link: '/cases/query-rewrite/59-limit1-exists' },
+        { text: '76 · 时区与 TIMESTAMP vs DATETIME', link: '/cases/query-rewrite/76-timestamp-vs-datetime' },
       ],
     },
     {
@@ -104,6 +106,7 @@ const sidebar = {
         { text: '64 · 分库分表路由策略', link: '/cases/architecture/64-sharding-route' },
         { text: '65 · 缓存穿透与布隆过滤器', link: '/cases/architecture/65-cache-penetration' },
         { text: '72 · 自增主键耗尽与分布式 ID', link: '/cases/architecture/72-auto-inc-exhaustion' },
+        { text: '75 · 连接池与 max_connections 耗尽诊断', link: '/cases/architecture/75-connection-pool-exhaustion' },
       ],
     },
     {
@@ -133,6 +136,7 @@ const sidebar = {
         { text: '68 · 优化器 Hint 实战', link: '/cases/optimizer/68-optimizer-hint' },
         { text: '69 · 派生条件下推（8.0）', link: '/cases/optimizer/69-derived-condition-pushdown' },
         { text: '70 · 大批量 UPDATE 分批优化', link: '/cases/optimizer/70-batch-update' },
+        { text: '74 · 慢查询排查方法论', link: '/cases/optimizer/74-slow-query-diagnosis' },
       ],
     },
   ],
@@ -164,14 +168,14 @@ export default defineConfig({
     // Open Graph（社交分享卡片）
     ['meta', { property: 'og:site_name', content: 'SQL Lab' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'SQL Lab · 73 个能跑的 MySQL 优化实战案例' }],
-    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。73 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
+    ['meta', { property: 'og:title', content: 'SQL Lab · 77 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { property: 'og:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。77 个精选案例，7 大场景，Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { property: 'og:url', content: 'https://slowleelab.github.io/sql-lab/' }],
     ['meta', { property: 'og:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
 
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'SQL Lab · 73 个能跑的 MySQL 优化实战案例' }],
+    ['meta', { name: 'twitter:title', content: 'SQL Lab · 77 个能跑的 MySQL 优化实战案例' }],
     ['meta', { name: 'twitter:description', content: '一套能跑、能量化对比的 MySQL 优化实战案例集。Docker 一键复现，bad/good EXPLAIN 量化对比。' }],
     ['meta', { name: 'twitter:image', content: 'https://slowleelab.github.io/sql-lab/og-image.svg' }],
   ],

@@ -1,0 +1,10 @@
+title: 连接池与 max_connections 耗尽诊断
+category: architecture
+difficulty: 2
+versions: ["5.7", "8.0"]
+tags: ["max_connections", "连接池", "Too many connections", "Threads_connected", "PROCESSLIST"]
+description: |
+  生产环境突发 "Too many connections" 报错，所有新连接被拒绝。
+  本案例演示连接耗尽的常见根因（慢 SQL 占连接、连接泄漏、突发流量）、
+  通过 SHOW PROCESSLIST 和 performance_schema 定位占用连接的 SQL、
+  以及 max_connections 调优和连接池配置最佳实践。
